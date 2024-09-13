@@ -1,4 +1,4 @@
-package com.galkinalex
+package com.galkinalex.com.galkinalex.kotlincourse.lesson3.com.galkinalex.kotlincourse
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

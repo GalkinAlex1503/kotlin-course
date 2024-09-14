@@ -1,6 +1,5 @@
 package com.galkinalex.kotlincourse.lesson4
 
-
 //Для каждого значения допиши подходящий тип данных
 
 //42  Int
@@ -15,7 +14,7 @@ package com.galkinalex.kotlincourse.lesson4
 //18.0f  Float
 //-0.001   Int
 //"OpenAI"  String
-//“true”  String
+//“true”  Error type
 //'9'  Char
 //2048  Int
 //10000000000L  Long

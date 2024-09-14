@@ -1,9 +1,7 @@
-//package com.galkinalex.kotlincourse.lesson4
-//
+package com.galkinalex.kotlincourse.lesson4
+
 //Для каждого значения допиши подходящий тип данных
-//
-//
-//
+
 //42  Int
 //98765432123456789L Long
 //23.45f  Float

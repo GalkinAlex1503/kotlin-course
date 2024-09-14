@@ -1,5 +1,6 @@
 package com.galkinalex.kotlincourse.lesson4
 
+
 //Для каждого значения допиши подходящий тип данных
 
 //42  Int

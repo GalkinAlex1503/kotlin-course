@@ -12,13 +12,14 @@ fun main() {
     println(getSeason(-1))
     println(getSeason(15))
 
+
     // Задание 2: "Расчет Возраста Питомца"
     // Контекст: Создайте функцию, которая преобразует возраст собаки в "человеческие" годы.
     // До 2 лет каждый год собаки равен 10.5 человеческим годам, после - каждый год равен 4 человеческим годам.
     println("Задание 2")
     println(calcDogAge(1))
     println(calcDogAge(5))
-    println(-1)  //???
+    println(-1)
 
     // Задание 3: "Определение Вида Транспорта"
     // Контекст: Напишите функцию, которая определяет, какой вид транспорта лучше использовать,
@@ -54,9 +55,9 @@ fun main() {
     //    Несколько аргументов передаются через запятую. Возвращать нужно строку.
     //    Подсказка: для генерации строки из числа и буквы можно использовать шалон “$result F” для фаренгейта или “$result C” для цельсия
     println("Задание 6")
-    println(getTemperature(45 , "C"))
-    println(getTemperature(90 , "F"))
-    println(getTemperature(45 , "E"))
+    println(getTemperature(45, "C"))
+    println(getTemperature(90, "F"))
+    println(getTemperature(45, "E"))
 
     // Задание 7: "Подбор Одежды по Погоде"
     // Контекст: Напишите функцию, которая на основе температуры воздуха рекомендует тип
@@ -92,20 +93,21 @@ fun getSeason(numSeason: Int): String {
         "invalid number of months"
     }
 }
-fun calcDogAge (numAge: Int): Double {
-    if (numAge < 0)  throw Exception("Invalid age")
+
+fun calcDogAge(numAge: Int): Double {
+    if (numAge < 0) throw Exception("Invalid age")
 
     return if (numAge in 0..2) {
         numAge * 10.5
-    } else  {
+    } else {
         numAge * 4.0
     }
 }
 
-fun calcTypeTransport (distance: Double ): String {
-    if (distance < 0) throw  Exception("Invalid range")
+fun calcTypeTransport(distance: Double): String {
+    if (distance < 0) throw Exception("Invalid range")
 
-    return  if (distance < 1.0) {
+    return if (distance < 1.0) {
         "пешком"
     } else if (distance < 5.0) {
         "велосипед"
@@ -114,8 +116,8 @@ fun calcTypeTransport (distance: Double ): String {
     }
 }
 
-fun calsBonus (sumPay: Double): Double  {
-    if (sumPay < 0) throw  Exception("Invalid summa")
+fun calsBonus(sumPay: Double): Double {
+    if (sumPay < 0) throw Exception("Invalid summa")
 
     return if (sumPay < 1000.0) {
         ((sumPay - (sumPay % 100)) / 100) * 2
@@ -124,30 +126,29 @@ fun calsBonus (sumPay: Double): Double  {
     }
 }
 
-fun getTypeDocument (extFile: String): String {
-   return when(extFile) {
-       "txt" -> "Текстовый документ"
-       "bmp" -> "Изображение"
-       "exl" -> "Таблица"
-       else -> "Неизвестный тип"
-   }
-}
-
-fun getTemperature (degrees: Int, typeTemperate: String ): String {
-    return when (typeTemperate) {
-        "C" -> {
-            "$degrees C"
-        }
-        "F" -> {
-            "$degrees F"
-        }
-        else -> {
-            "Invalid type of temperature"
-        }
+fun getTypeDocument(extFile: String): String {
+    return when (extFile) {
+        "txt" -> "Текстовый документ"
+        "bmp" -> "Изображение"
+        "exl" -> "Таблица"
+        else -> "Неизвестный тип"
     }
 }
 
-fun getClothes (degrees: Int): String {
+fun getTemperature(degrees: Int, typeTemperate: String): String {
+    val convDegrees: Double
+    if (typeTemperate != "C" && typeTemperate != "F") return "Invalid type of temperature"
+    if (typeTemperate == "C") {
+         convDegrees = (degrees * 1.8 ) + 32.0
+        return  "$convDegrees F"
+    } else {
+        convDegrees = (degrees - 32.0 ) * 1.8
+        return  "$convDegrees C"
+    }
+
+}
+
+fun getClothes(degrees: Int): String {
     return if (degrees < -35 || degrees > 35) {
         "рекомендуйте не выходить из дома"
     } else if (degrees < 0) {
@@ -159,14 +160,14 @@ fun getClothes (degrees: Int): String {
     } else "Invalid temperature"
 }
 
-fun calcCategoryFilm (age: Int): String {
-    return if (age < 0)  {
+fun calcCategoryFilm(age: Int): String {
+    return if (age < 0) {
         "Invalid age"
-    } else  if (age in 0..12) {
+    } else if (age in 0..12) {
         "детские"
-    } else  if (age in 13..17) {
+    } else if (age in 13..17) {
         "детские и подростковые"
-    } else   {
+    } else {
         "детские и подростковые и 18+"
     }
 }

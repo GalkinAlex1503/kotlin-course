@@ -161,13 +161,18 @@ fun getClothes(degrees: Int): String {
 }
 
 fun calcCategoryFilm(age: Int): String {
-    return if (age < 0) {
-        "Invalid age"
-    } else if (age in 0..12) {
-        "детские"
-    } else if (age in 13..17) {
-        "детские и подростковые"
-    } else {
-        "детские и подростковые и 18+"
+    return when {
+        age < 0 -> {
+            "Invalid age"
+        }
+        age in 0..12 -> {
+            "детские"
+        }
+        age in 13..17 -> {
+            "детские и подростковые"
+        }
+        else -> {
+            "детские и подростковые и 18+"
+        }
     }
 }

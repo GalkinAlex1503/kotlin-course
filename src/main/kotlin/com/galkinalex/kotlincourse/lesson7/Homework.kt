@@ -1,6 +1,5 @@
 package com.galkinalex.kotlincourse.lesson7
 
-import com.galkinalex.kotlincourse.lesson3.fullInfoProject
 
 fun main() {
     //Задания для Цикла for

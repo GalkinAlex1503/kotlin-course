@@ -64,6 +64,23 @@ fun main() {
     //    где каждое слово начинается с заглавной буквы а все остальные - строчные.
     //    (можно использовать такой же подход как в задании 5, но накапливать не первые буквы а целиком слова,
     //    составленные из первой буквы с uppercase и оставшейся части слова)
+
+    println(formatString("можно использовать такой же подход как в задании 5, но накапливать не первые буквы а целиком слова составленные из первой буквы с uppercase и оставшейся части слова"))
+    println()
+
+    //    Написать шифратор/дешифратор для строки. Шифровка производится путём замены двух соседних букв между собой:
+    //    Kotlin шифруется в oKltni. Дешифровка выполняется аналогично. Если длина строки - нечётная,
+    //    в конец добавляется символ пробела до начала шифрования. Таким образом все шифрованные сообщения будут с чётной длинной.
+    //    Должно получиться два публичных метода: encrypt() и decrypt() которые принимают и возвращают строку.
+
+    println(encrypt("Kotlin"))
+    println(dencrypt("oKltni"))
+    println()
+
+    //    Таблица умножения
+    println(createTable(3, 4))
+
+
 }
 
 fun transform(txt: String): String {
@@ -117,9 +134,68 @@ fun getFileName (txt: String): String {
 }
 
 fun makeAbbreviation (txt: String): String {
-    var result: String = ""
-    for (word in txt.split(" ", "-")) {
-        result += word[0].uppercase()
+    if (txt.isEmpty()) return txt
+    if (!txt.contains(" ")) return txt[0].uppercase()
+
+    var result = ""
+    for (word in txt.split(" ", "-"))   result += word[0].uppercase()
+
+    return  result
+}
+
+fun formatString (txt: String): String {
+    var result =  ""
+    for (elem in txt.split(" "))   result += "${elem[0].uppercase()}${elem.substring(1)} "
+
+    return result.trim()
+}
+
+fun encrypt(txt: String): String {
+    var result = ""
+
+    for (elem in (if (txt.length % 2 == 1) "$txt " else txt).chunked(2)) {
+        result += elem.reversed()
     }
     return  result
+}
+
+fun dencrypt(txt: String): String {
+    var result = ""
+
+    for (elem in txt.chunked(2)) {
+        result += elem.reversed()
+    }
+    return  result
+}
+
+fun createTable (x: Int, y: Int): String {
+    var result = ""
+    val lengthCell =  (x * y).toString().length
+
+    for (i in 0..x) {
+        for (j in 0..y) {
+            if (i == 0 && j == 0) {
+                result += "${fillCell(lengthCell, 1)} "
+                continue
+            } else if (i == 0) {
+                result += "${fillCell(lengthCell, j)}$j"
+                continue
+            } else if (j == 0) {
+                result += "${fillCell(lengthCell, j)}$i"
+                continue
+            }
+
+            result += "${fillCell(lengthCell, i * j)}${i * j}"
+        }
+        result += "\n"
+    }
+    return result
+}
+
+fun fillCell (lf: Int, cellValue: Int): String {
+    var result = ""
+    for (i in 0..(lf - cellValue.toString().length)) {
+        result += " "
+    }
+    return result
 }

@@ -78,7 +78,7 @@ fun main() {
     println()
 
     //    Таблица умножения
-    println(createTable(3, 4))
+    println(createTable(5, 4))
 
 
 }

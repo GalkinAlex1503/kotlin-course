@@ -26,22 +26,22 @@ fun main() {
     arrTask5[2] = null
     println(" arrTask5 ${arrTask5.toList()}")
 
-    val arrTask6 = arrayOf(1,2,3,4,5,6)
-    val arrTask6Result =  Array(6) {0}
+    val arrTask6 = arrayOf(1, 2, 3, 4, 5, 6)
+    val arrTask6Result = Array(6) { 0 }
     for (i in arrTask6.indices) {
         arrTask6Result[i] = arrTask6[i]
     }
     println(" arrTask6 ${arrTask6.toList()}  arrTask6Result ${arrTask6.toList()}")
 
-    val arrTask7First = arrayOf(6,7,8,9,10)
-    val arrTask7Second = arrayOf(1,2,3,4,5)
-    val arrTask7Result = Array(5) {0}
+    val arrTask7First = arrayOf(6, 7, 8, 9, 10)
+    val arrTask7Second = arrayOf(1, 2, 3, 4, 5)
+    val arrTask7Result = Array(5) { 0 }
     for (i in arrTask7First.indices) {
         arrTask7Result[i] = arrTask7First[i] - arrTask7Second[i]
     }
     println(" arrTask7First ${arrTask7First.toList()}  arrTask7Second ${arrTask7Second.toList()} arrTask7Result ${arrTask7Result.toList()}")
 
-    val arrTask8 = arrayOf(1,2,3,4,5,6,7,8)
+    val arrTask8 = arrayOf(1, 2, 3, 4, 5, 6, 7, 8)
     var elem = 0
     var result = -1
     while (elem < arrTask8.size) {
@@ -50,7 +50,7 @@ fun main() {
     }
     println(result)
 
-    val arrTask9 = arrayOf (1,2,3,4,5,6,7,8,9)
+    val arrTask9 = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     for (elem in arrTask9) {
         if (elem % 2 == 0) println("$elem - четный")
         else println("$elem - нечетный")
@@ -62,7 +62,7 @@ fun main() {
     println(findSubStr(arrTask10, "plpl"))
 }
 
-fun findSubStr (arr: Array<String>, str: String): String {
+fun findSubStr(arr: Array<String>, str: String): String {
     for (elem in arr) {
         if (elem.contains(str)) return elem
     }

@@ -42,8 +42,4 @@ fun main() {
     println("buy 1 ticket on show ${rhcp.band}")
     rhcp.buyTicket()
     rhcp.showInfoShow()
-    println()
-
-    //taskExtended Дополнительное задание: Работа со Стеллажами и Полками
-
 }

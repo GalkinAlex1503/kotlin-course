@@ -50,9 +50,9 @@ class Rack(
         } else false
     }
 
-    fun removeShelf(indxShelf: Int): Boolean {
-        return if (this.shelves.size <= indxShelf) {
-            this.shelves.remove(this.shelves[indxShelf])
+    fun removeShelf(indexShelf: Int): Boolean {
+        return if (this.shelves.size <= indexShelf) {
+            this.shelves.remove(this.shelves[indexShelf])
             true
         } else false
     }

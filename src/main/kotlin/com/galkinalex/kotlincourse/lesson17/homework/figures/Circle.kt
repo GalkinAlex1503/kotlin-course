@@ -1,4 +1,4 @@
-package com.galkinalex.kotlincourse.lesson17.homework
+package com.galkinalex.kotlincourse.lesson17.homework.figures
 
 class Circle (
     val radius: Double

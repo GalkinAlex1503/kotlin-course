@@ -9,6 +9,7 @@ import com.galkinalex.kotlincourse.lesson18.homework.figures.Circle
 import com.galkinalex.kotlincourse.lesson18.homework.figures.Shape
 import com.galkinalex.kotlincourse.lesson18.homework.figures.Square
 import com.galkinalex.kotlincourse.lesson18.homework.figures.Triangle
+import com.galkinalex.kotlincourse.lesson18.homework.printers.Colors
 import com.galkinalex.kotlincourse.lesson18.homework.printers.InkPrinter
 import com.galkinalex.kotlincourse.lesson18.homework.printers.LaserPrinter
 
@@ -34,4 +35,12 @@ fun main() {
     println(carts.toString())
     carts.addToCart(listOf(1,2,3))
     println(carts.toString())
+    println()
+
+    println("Логгер")
+    val msg = "dsdfsdfsdfsdf"
+    val log = Logger();
+    log.log(msg)
+    log.log(msg, LevelDebug.INFO ,Colors.RED)
+
 }

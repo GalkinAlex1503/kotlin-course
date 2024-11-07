@@ -1,4 +1,4 @@
-package com.galkinalex.kotlincourse.lesson18.homework
+package com.galkinalex.kotlincourse.lesson18.homework.figures
 
 open class Shape () {
     open fun area(): Double {

@@ -16,9 +16,6 @@ abstract class BaseClass(
             }
         }
     protected var protectedField = "измени меня из функции main() через сеттер в наследнике"
-    protected fun setProtectedField (value: String) {
-        protectedField = value
-    }
     private var privateField = "добавь сеттер чтобы изменить меня из main()"
     fun setPrivateField (value: String) {
         privateField = value
@@ -64,7 +61,7 @@ class ChildrenClass(
     protectedVal: String,
     // объясни, почему этот аргумент доступен в main() несмотря на то, что это не поле
     publicVal: String
-) : BaseClass(privateVal, protectedVal, privateVal) {
+) : BaseClass(privateVal, protectedVal, publicVal) {
 
     // объясни, почему в main() доступна функция getAll() хотя её здесь нет   --->   функция наследована от родительского класса
 
@@ -76,6 +73,10 @@ class ChildrenClass(
     // ---> изменение проверки длины чтобы работал сеттер
     override fun verifyPublicField(value: String): Boolean {
         return value.length > 3
+    }
+
+    fun setProtField (value: String) {
+        protectedField = value
     }
 
 }

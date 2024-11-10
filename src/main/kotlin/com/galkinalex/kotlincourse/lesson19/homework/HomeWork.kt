@@ -10,5 +10,8 @@ fun main() {
     child.printText()
     child.setPrivateField("set private field")
     println("->")
+    child.setProtField("protected field set")
     println(child.getAll())
+
+
 }

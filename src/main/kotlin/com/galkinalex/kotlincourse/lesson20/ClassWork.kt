@@ -35,10 +35,15 @@ class Notebook : Device {  // можно наследоваться от мно�
         get() = TODO("Not yet implemented")
 
     override fun turnOn() {
-        TODO("Not yet implemented")
+        println("turn On")
     }
 
     override fun turnOff() {
-        TODO("Not yet implemented")
+        println("turn Off")
     }
+}
+
+fun main() {
+    val dev = Notebook()
+    println( dev.deviceId )
 }

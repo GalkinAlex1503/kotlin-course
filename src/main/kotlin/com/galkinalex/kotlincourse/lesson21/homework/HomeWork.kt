@@ -40,8 +40,14 @@ class ListHolder<T>(
 
 //4. Создайте интерфейс Mapper<T, R>,
 // который будет определять метод для преобразования элементов типа T в элементы типа R.
+//6.Добавь к интерфейсу Mapper ещё один метод,
+// который будет преобразовывать список элементов типа T в список элементов типа R.
+// Реализуй этот метод в классе PhrasesToListOfStrings с аналогичной механикой.
 interface Mapper <T, R> {
-    fun  transform(elem: T): R
+    fun transform(elem: T): R
+    fun convertList(list: List<T>): List<R> {
+        return list.map { transform(it) }
+    }
 }
 
 //5. Создай класс PhrasesToListOfStrings
@@ -51,13 +57,10 @@ class PhrasesToListOfStrings : Mapper<String, List<String>> {
     override fun transform(elem: String): List<String> {
       return elem.split(" ")
     }
+
+
 }
-// ****** класс с интерефейосм Mapper с типами Double и List<Int>.  Метод разбивает агргумент на целую и дробную часть и помещает их в список
-class DoubleToListOfInt : Mapper<Double, List<String>> {
-    override fun transform(elem: Double): List<String> {
-       return elem.toString().split(".")
-    }
-}
+
 
 fun main() {
     println("1")
@@ -75,7 +78,9 @@ fun main() {
     println("5")
     val exm5 = PhrasesToListOfStrings()
     println( exm5.transform("sdfsf sdfsd sdfs") )
-    val exm5_2 = DoubleToListOfInt()
-    println( exm5_2.transform( 10.02 ) )
+    println("6")
+    println( exm5.convertList(listOf("sdfd cxv", "bvnbn oipo")))
+    println()
+
 
 }

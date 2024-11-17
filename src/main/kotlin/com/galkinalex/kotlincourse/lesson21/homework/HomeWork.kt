@@ -34,7 +34,7 @@ class ListHolder<T>(
     }
 
     fun getList(): List<T> {
-        return listElem
+        return listElem.toList()
     }
 }
 

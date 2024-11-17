@@ -25,4 +25,19 @@ fun main() {
     println("funD ${exmplE.funE()}")
     println()
 
+    println("Переворот элементов пары")
+    val pairOne = ("key" to "vol")
+    println("$pairOne  revert ${pairOne.revert()}")
+    val pairTwo = ("key" to 1)
+    println("$pairTwo  revert ${pairTwo.revert()}")
+    val pairThree = ("key" to null)
+    println("$pairThree  revert ${pairThree.revert()}")
+    println()
+
+    println("Проверка допустимого отклонения числа")
+    val explWithin = 100.0
+    val other =  101.0
+    val deviation = 2.0
+    println("$explWithin  -> ${explWithin.within(other,deviation)} ")
+    println()
 }

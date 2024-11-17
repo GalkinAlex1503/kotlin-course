@@ -20,22 +20,25 @@ package com.galkinalex.kotlincourse.lesson22.homework.extensions
 // e. Определите функцию-расширение для класса длинного числа, допускающее null,
 // которая не принимает аргументов и возвращает строку.
 
-fun Array<Int>.funA () : Pair<Int, Int> {
+fun Array<Int>.funA(): Pair<Int, Int> {
     return 0 to 0
 }
 
 fun Char?.funB(arg1: Int, arg2: Int, arg3: Boolean) {
+    println("funB arg1: $arg1  arg2: $arg2 arg3: $arg3")
 }
 
-fun <T> MutableList<T>.funC(arg1: T?, arg2:  Int): T? {
-    return null
+fun <T> MutableList<T>.funC(arg1: T?, arg2: Int): T? {
+    if (arg2 >= this.size) return null
+    return  if (this.get(arg2) === arg1) arg1
+            else null
 
 }
 
-fun <T> Map<T,List<T>>?.funD(arg1: Int): Map<String, T?> {
-    return mapOf("sdfs" to  null)
+fun <T> Map<T, List<T>>?.funD(arg1: Int): Map<String, T?> {
+    return mapOf("sdfs" to null)
 }
 
-fun Long?.funE(): String  {
-    return ""
+fun Long?.funE(): String {
+    return this?.toString() ?: ""
 }

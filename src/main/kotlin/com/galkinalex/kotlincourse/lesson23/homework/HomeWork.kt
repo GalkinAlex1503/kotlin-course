@@ -1,8 +1,5 @@
 package com.galkinalex.kotlincourse.lesson23.homework
 
-import com.galkinalex.kotlincourse.lesson3.contactInfo
-import kotlin.math.pow
-
 //Задача 1
 //Напишите функцию analyzeDataType, принимающую параметр типа Any. Функция должна определить тип аргумента и вывести соответствующее сообщение:
 //  Для строки: "Это строка: [значение]".
@@ -48,10 +45,11 @@ fun getStringLengthOrZero(param: Any?): Int {
 // то его нужно преобразовать в число через функцию toDouble() и возвести в квадрат.
 
 fun calcSquare(num: Any): Double {
-    return if (num is Double) {
-        num * num
-    } else {
-        (num as String).toDouble() * (num as String).toDouble()
+    return when (num) {
+        is String -> num.toDouble() * num.toDouble()
+        is Int-> num.toDouble() * num.toDouble()
+        is Double -> num * num
+        else -> {0.0}
     }
 }
 

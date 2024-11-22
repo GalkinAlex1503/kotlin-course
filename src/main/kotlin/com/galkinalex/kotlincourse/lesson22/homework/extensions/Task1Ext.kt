@@ -36,7 +36,8 @@ fun <T> MutableList<T>.funC(arg1: T?, arg2: Int): T? {
 }
 
 fun <T> Map<T, List<T>>?.funD(arg1: Int): Map<String, T?> {
-    return mapOf("sdfs" to null)
+    val vol: T? = null
+    return mapOf("sdfs" to vol)
 }
 
 fun Long?.funE(): String {

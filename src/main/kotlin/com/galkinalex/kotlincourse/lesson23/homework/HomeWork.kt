@@ -36,7 +36,6 @@ fun safeCastToList(param: Any): Int {
 //Создайте функцию getStringLengthOrZero, которая принимает параметр типа Any? и возвращает длину строки,
 // если аргумент можно привести к типу String.
 // В случае, если аргумент равен null или не является строкой, функция должна возвращать 0.
-// ---- ?   а если тип стринг но значение переменной нал? как раскастуется тип?
 
 fun getStringLengthOrZero(param: Any?): Int {
     return (param as? String)?.length ?: 0

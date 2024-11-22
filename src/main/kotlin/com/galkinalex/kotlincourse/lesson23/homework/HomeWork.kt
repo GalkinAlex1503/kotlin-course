@@ -98,19 +98,23 @@ fun main() {
     println("Task 2")
     println("list ->  ${safeCastToList(listOf("sdfs", "sdfdf"))}")
     println("Int ->  ${safeCastToList(13)}")
+    println()
 
     println("Task 3")
     println("String -> ${getStringLengthOrZero("sdfsdf")}")
     println("null -> ${getStringLengthOrZero(null)}")
     println("Int -> ${getStringLengthOrZero(13)}")
+    println()
 
     println("Task 4")
     println("2.5 -> ${calcSquare(2.5)}")
     println("\"2.5\" -> ${calcSquare("2.5")}")
+    println()
 
     println("Task 5")
     val listOne = listOf("asda", 1, 2.0)
     println("$listOne -> ${sumIntOrDoubleValues(listOne)}")
+    println()
 
     println("Task 6")
     tryCastToListAndPrint(listOf("sdfs","fghfg", 13))

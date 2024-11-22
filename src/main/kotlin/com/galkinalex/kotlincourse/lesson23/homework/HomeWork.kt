@@ -117,6 +117,8 @@ fun main() {
     println()
 
     println("Task 6")
-    tryCastToListAndPrint(listOf("sdfs","fghfg", 13))
+    val listTask6 = listOf("sdfs","fghfg", 13)
+    println(listTask6)
+    tryCastToListAndPrint(listTask6)
 
 }

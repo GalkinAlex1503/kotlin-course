@@ -60,14 +60,7 @@ fun calcSquare(num: Any): Double {
 
 fun sumIntOrDoubleValues(listElem: List<Any>): Double {
     var result = 0.0
-    listElem.forEach {
-        when (it) {
-            is Int -> result += it.toDouble()
-            is Double -> result += it
-            else -> result = result // return@forEach
-        }
-    }
-    return result
+    return listElem.map { (it as? Number ?: 0.0).toDouble()}.sum()
 }
 
 //Задача 6
@@ -77,10 +70,10 @@ fun sumIntOrDoubleValues(listElem: List<Any>): Double {
 // Если приведение неудачно, должно быть выведено сообщение об ошибке, не прерывая выполнение программы.
 
 fun tryCastToListAndPrint(param: Any) {
-    (param as List<*>).forEach {
+    (param as? List<*>)?.forEach {
         val elem = it as? String
         println(elem ?: "$it not a String")
-    }
+    } ?: println("not a List")
 }
 
 fun main() {

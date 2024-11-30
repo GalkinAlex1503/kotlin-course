@@ -1,0 +1,35 @@
+package com.galkinalex.kotlincourse.lesson25.homework
+
+//Задание 1. Создай константу в файле с текстом. Создай функцию, которая ничего не принимает и
+// не возвращает и печатает в консоль текст константы.
+//Создай аналогичную анонимную функцию.
+//Создай аналогичное лямбда выражение с указанием типа.
+//Создай лямбда выражение без указания типа.
+//Проверь как функция работает
+
+
+fun main() {
+
+    //Задание 1.
+    val funTask1AnonymousFun = fun() {
+        println(ConstHomeWork.TXT)
+    }
+
+    val funTask1LambdaType: () -> Unit = {
+        println(ConstHomeWork.TXT)
+    }
+
+    val funTask1LambdaShort = {
+        println(ConstHomeWork.TXT)
+    }
+
+    println("Задание 1")
+    funTask1AnonymousFun()
+    funTask1LambdaType()
+    funTask1LambdaShort()
+
+}
+
+fun funTask1 () {
+    println(ConstHomeWork.TXT)
+}

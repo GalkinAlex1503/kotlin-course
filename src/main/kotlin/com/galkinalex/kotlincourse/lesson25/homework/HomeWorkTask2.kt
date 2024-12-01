@@ -68,7 +68,7 @@ fun main() {
     println(
         "$testList3 -> ${
             try {
-                funTask2LambdaShort(testList3)
+                funTask2LambdaType(testList3)
             } catch (e: Exception) {
                 "Error: $e"
             }

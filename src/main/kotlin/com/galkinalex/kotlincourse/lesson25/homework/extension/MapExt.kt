@@ -9,8 +9,8 @@ import java.lang.IllegalStateException
 
 fun Map<String, Int>.funTask6(num: Int): List<String> {
     val result = mutableListOf<String>()
-    this.forEach { k, v ->
-        if (k.length < v && k.length > num) {
+    this.forEach { (k, v) ->
+        if (k.length in (num + 1)..<v) {
             result.add(k)
         }
     }

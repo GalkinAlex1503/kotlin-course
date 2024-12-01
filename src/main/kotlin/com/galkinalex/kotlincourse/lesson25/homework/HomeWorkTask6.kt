@@ -23,8 +23,8 @@ fun main() {
     //anonymous function
     val funTask6AnonymousFun = fun Map<String, Int>.(num: Int): List<String> {
         val result = mutableListOf<String>()
-        this.forEach { k, v ->
-            if (k.length < v && k.length > num) {
+        this.forEach { (k, v) ->
+            if (k.length in (num + 1)..<v) {
                 result.add(k)
             }
         }
@@ -38,8 +38,8 @@ fun main() {
     //lambda expression with type specification
     val funTask6LambdaType: Map<String, Int>.(Int) -> List<String> = { num ->
         val result = mutableListOf<String>()
-        this.forEach { k, v ->
-            if (k.length < v && k.length > num) {
+        this.forEach { (k, v) ->
+            if ((k.length < v) && (k.length > num)) {
                 result.add(k)
             }
         }

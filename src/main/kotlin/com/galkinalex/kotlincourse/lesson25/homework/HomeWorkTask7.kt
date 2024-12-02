@@ -1,6 +1,5 @@
 package com.galkinalex.kotlincourse.lesson25.homework
 
-import com.galkinalex.kotlincourse.lesson25.homework.extension.funTask5
 import com.galkinalex.kotlincourse.lesson25.homework.extension.funTask7
 
 //Задание 7. Создай функцию расширения словаря из списка и множества,

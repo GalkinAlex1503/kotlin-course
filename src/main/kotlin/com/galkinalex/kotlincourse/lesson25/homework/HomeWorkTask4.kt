@@ -1,6 +1,5 @@
 package com.galkinalex.kotlincourse.lesson25.homework
 
-import com.galkinalex.kotlincourse.lesson18.homework.printers.Printer
 
 //Задание 4. Создай функцию, которая принимает большое число и возвращает сумму цифр этого числа.
 //По аналогии с предыдущим заданием выполни трансформации и проверки.

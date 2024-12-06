@@ -1,8 +1,5 @@
 package com.galkinalex.kotlincourse.lesson26.homework
 
-import com.galkinalex.kotlincourse.lesson12.retunrStringNullble
-import jdk.internal.org.jline.utils.Colors.s
-
 //Задания на разработку кода
 
 //  Напишите функцию filterStrings, которая принимает список строк и функцию-фильтр, оставляющую только строки,
@@ -28,10 +25,10 @@ fun applyToNumbers(
 //  Реализуйте функцию sumByCondition, которая принимает список чисел и функцию,
 //  определяющую условие для включения числа в сумму. Функция должна вернуть сумму чисел, прошедших проверку.
 fun sumByCondition(
-    numList: List<Number>,
-    checkFun: (Number) -> Boolean
-): Number {
-    return numList.filter { checkFun(it) }.sumOf { it.toDouble() }
+    numList: List<Int>,
+    checkFun: (Int) -> Boolean
+): Int {
+    return numList.filter { checkFun(it) }.sum()
 }
 
 //  Напишите функцию combineAndTransform,
@@ -49,7 +46,7 @@ fun <T> combineAndTransform(
 fun main() {
     //    Для последних четырёх заданий сделать минимум по две разные реализации лямбда функций и
     //    проверить работу на разных наборах данных
-
+    //---------------------
     //filterStrings     filterFun: (String) -> Boolean
     val filterLower: (String) -> Boolean = {
         it == it.lowercase() && it.isNotEmpty()
@@ -73,6 +70,7 @@ fun main() {
     println("$testData12 : ${filterStrings(testData12, filterPerfectSize)}")
     println()
 
+    //---------------------
     //applyToNumbers  transformFun: (Number) -> Number
     val transformNegative: (Number) -> Number = {
         when (it) {
@@ -84,7 +82,6 @@ fun main() {
             is Short -> -1 * it
             else -> 0
         }
- //       (-1 * it.toDouble())
     }
 
     val transformIncreaseTenfold: (Number) -> Number = {
@@ -100,8 +97,8 @@ fun main() {
     }
 
     //test data
-    val testData21 = listOf( 1, 1.0, -1, 0.1, 0)
-    val testData22 = listOf(-5 , -5.0 , 100L, 0)
+    val testData21 = listOf(1, 1.0, -1, 0.1, 0)
+    val testData22 = listOf(-5, -5.0, 100L, 0)
 
     //tests
     println("applyToNumbers")
@@ -113,6 +110,74 @@ fun main() {
     println("$testData21 : ${applyToNumbers(testData21, transformIncreaseTenfold)}")
     println("$testData22 : ${applyToNumbers(testData22, transformIncreaseTenfold)}")
     println()
+    //---------------------
+    //sumByCondition checkFun: (Number) -> Boolean
+    val checkParity: (Int) -> Boolean = {
+        it % 2 == 0
+    }
 
-    //sumByCondition
+    val checkPositive: (Int) -> Boolean = {
+        it >= 0
+    }
+
+    //test data
+    val testData31 = listOf(1, 2, 3, 4, 5, 6, 0)
+    val testData32 = listOf(-5, 5, -3, 3, 0)
+
+    //tests
+    println("sumByCondition")
+    println("   subfunc -> checkParity")
+    println("$testData31 : ${sumByCondition(testData31, checkParity)}")
+    println("$testData32 : ${sumByCondition(testData32, checkParity)}")
+
+    println("   subfunc -> checkPositive")
+    println("$testData31 : ${sumByCondition(testData31, checkPositive)}")
+    println("$testData32 : ${sumByCondition(testData32, checkPositive)}")
+    println()
+
+    //---------------------
+    //combineAndTransform  funUnion: (List<T>, List<T>) -> Set<T>
+    val funUnionPositivInt: (List<Int>, List<Int>) -> Set<Int> = { listOne, listTwo ->
+        (listOne.filter { it >= 0 } + listTwo.filter { it >= 0 }).toSet()
+    }
+    val funUnionUpperStrings: (List<String>, List<String>) -> Set<String> = { listOne, listTwo ->
+        (listOne.map { it.uppercase() } + listTwo.map { it.uppercase() }).toSet()
+    }
+
+    //test data
+    val listInt11 = listOf(1, 2, 3, 4, 5, 6, 0)
+    val listInt12 = listOf(-5, 5, -3, 3, 0, 3, 100)
+    val listInt21 = listOf(-1, 2, -33, 4, 5, 6, 0)
+    val listInt22 = listOf(-5, 5, -3, 3, 0, 3, 10, 4, 5)
+
+    val listString11 = listOf("sdfsd", "DFGsdf", "dfg", " dfgJ")
+    val listString12 = listOf("sdfgsd", "DFghjgf", "dfg", "2213423")
+    val listString21 = listOf("", "sghGDdf", "dfGDg", "89sdfg9df")
+    val listString22 = listOf("sdfsd", "DFGsdf", "dfg", " dfgJ")
+
+    //tests
+    println("combineAndTransform")
+    println("   subfunc -> funUnionPositivInt")
+    println("$listInt11 ,  $listInt12  : ${combineAndTransform(listInt11, listInt12, funUnionPositivInt)}")
+    println("$listInt21 ,  $listInt22  : ${combineAndTransform(listInt21, listInt22, funUnionPositivInt)}")
+    println("   subfunc -> funUnionUpperStrings")
+    println(
+        "$listString11 ,  $listString12  : ${
+            combineAndTransform(
+                listString11,
+                listString12,
+                funUnionUpperStrings
+            )
+        }"
+    )
+    println(
+        "$listString21 ,  $listString22  : ${
+            combineAndTransform(
+                listString21,
+                listString22,
+                funUnionUpperStrings
+            )
+        }"
+    )
+
 }

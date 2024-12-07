@@ -9,7 +9,8 @@ fun filterStrings(
     listStr: List<String>,
     filterFun: (String) -> Boolean,
 ): List<String> {
-    return listStr.filter { filterFun(it) }
+    //  return listStr.filter { filterFun(it) }
+    return listStr.filter(filterFun)
 }
 
 //Создайте функцию applyToNumbers, которая принимает список чисел и функцию,
@@ -19,7 +20,7 @@ fun applyToNumbers(
     numList: List<Number>,
     transformFun: (Number) -> Number
 ): List<Number> {
-    return numList.map { transformFun(it) }
+    return numList.map(transformFun)
 }
 
 //  Реализуйте функцию sumByCondition, которая принимает список чисел и функцию,
@@ -28,7 +29,7 @@ fun sumByCondition(
     numList: List<Int>,
     checkFun: (Int) -> Boolean
 ): Int {
-    return numList.filter { checkFun(it) }.sum()
+    return numList.filter(checkFun).sum()
 }
 
 //  Напишите функцию combineAndTransform,
@@ -43,13 +44,32 @@ fun <T> combineAndTransform(
     return funUnion(col1, col2)
 }
 
+fun <T, K> combineAndTransform1(
+    col1: List<T>,
+    col2: List<T>,
+    funUnion: (List<T>, List<T>) -> List<K>
+): List<K> {
+    return funUnion(col1, col2)
+}
+
+fun <T,K,L: Collection<T>,M: Collection<K>> combineAndTransform2(
+    col1: L,
+    col2: L,
+    funUnion: (L,L) -> M
+): M {
+    val sum = col1 + col2
+    return funUnion(col1,col2)
+}
+
+
 fun main() {
     //    Для последних четырёх заданий сделать минимум по две разные реализации лямбда функций и
     //    проверить работу на разных наборах данных
     //---------------------
     //filterStrings     filterFun: (String) -> Boolean
     val filterLower: (String) -> Boolean = {
-        it == it.lowercase() && it.isNotEmpty()
+        it.isNotEmpty() && it == it.lowercase()
+//        it == it.lowercase() && it.isNotEmpty()
     }
     val filterPerfectSize: (String) -> Boolean = {
         it.length % 2 == 0 && it.isNotEmpty()

@@ -52,7 +52,7 @@ fun funTaskSyntax8(
     num: Int,
     subFun: (Int) -> String
 ): String {
-    return ""
+    return subFun(num)
 }
 
 //9.  Напишите функцию, принимающую функцию, которая возвращает функцию без аргументов и возвращаемого значения.

@@ -1,8 +1,5 @@
 package com.galkinalex.kotlincourse.lesson27.homework
 
-import jdk.internal.org.jline.utils.Colors.s
-import javax.swing.text.html.HTML.Tag.S
-
 fun timeTracker(
     subFunc: () -> Any
 ) {

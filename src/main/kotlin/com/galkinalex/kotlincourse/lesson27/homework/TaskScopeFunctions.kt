@@ -64,5 +64,19 @@ fun main() {
     }
 
 //    Задание 6: Использование let для безопасного преобразования Person в Employee
+    val hiring: (Person?) -> Employee? = { pers ->
+        pers?.let {
+            Employee (
+                pers.name,
+                pers.age,
+                position = "it"
+            )
+        }
+    }
 
+    val andy = Person(
+        "Andy",
+        50
+    )
+    val andyBoss  = hiring(andy)
 }

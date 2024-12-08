@@ -8,24 +8,61 @@ fun main() {
         "seller"
     )
     galkinAlex.apply {
-        if(email.isBlank()) {
+        if (email.isBlank()) {
             email = "${name.lowercase()}@mail.com"
+        }
+        if (department.isBlank()) {
+            department = "it"
         }
     }
 //    Задание 3: Использование also для логирования
+    val log: (Person) -> Unit = { persona ->
+        println("name: ${persona.name}")
+        println("age:  ${persona.age}")
+        println("email:  ${persona.email}")
+    }
+
+    val sam = Person(
+        "Sam",
+        30
+    )
+
+    sam.also(log)
+
 //    Задание 4: Использование with для преобразование Person в Employee
-    val newPerson = Person(
+    val bob = Person(
         "Bob",
         25
     )
-    val newPersonEmpl = with(newPerson) {
-        val newPersonEmployee = Employee (
-            newPerson.name,
-            newPerson.age,
+    val bobManager = with(bob) {
+        Employee(
+            name,
+            age,
             "manager"
         )
-        newPersonEmployee
     }
 //    Задание 5: Использование run для преобразования и инициализации Employee
+    val john = Person(
+        "John",
+        27
+    )
+    val johnGuard = john.run {
+        Employee(
+            name,
+            age,
+            "security"
+        )
+    }
+
+    johnGuard.apply {
+        if (email.isBlank()) {
+            email = "${name.lowercase()}@mail.com"
+        }
+        if (department.isBlank()) {
+            department = "it"
+        }
+    }
+
 //    Задание 6: Использование let для безопасного преобразования Person в Employee
+
 }

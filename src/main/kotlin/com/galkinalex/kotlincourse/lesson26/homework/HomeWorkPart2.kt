@@ -57,7 +57,6 @@ fun <T,K,L: Collection<T>,M: Collection<K>> combineAndTransform2(
     col2: L,
     funUnion: (L,L) -> M
 ): M {
-    val sum = col1 + col2
     return funUnion(col1,col2)
 }
 
@@ -163,6 +162,15 @@ fun main() {
     val funUnionUpperStrings: (List<String>, List<String>) -> Set<String> = { listOne, listTwo ->
         (listOne.map { it.uppercase() } + listTwo.map { it.uppercase() }).toSet()
     }
+    //combineAndTransform2  fun <T,K,L: Collection<T>,M: Collection<K>> combineAndTransform2(
+    //    col1: L,
+    //    col2: L,
+    //    funUnion: (L,L) -> M
+    //): M
+    val funUnionNew: (List<Int>,List<Int>) -> Set<String> = { listOne, listTwo ->
+        val resultSet = (listOne + listTwo).map { it.toString()}.toSet()
+        resultSet
+    }
 
     //test data
     val listInt11 = listOf(1, 2, 3, 4, 5, 6, 0)
@@ -199,5 +207,7 @@ fun main() {
             )
         }"
     )
-
+    println("   subfunc -> funUnionNew")
+    println("$listInt11 ,  $listInt12  : ${combineAndTransform2(listInt11, listInt12, funUnionNew)}")
+    println("$listInt21 ,  $listInt22  : ${combineAndTransform2(listInt21, listInt22, funUnionNew)}")
 }

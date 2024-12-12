@@ -7,7 +7,7 @@ import java.io.File
 //запишите в него строку "Hello, Kotlin!", а затем проверьте, существует ли файл.
 
 fun main() {
-    val file = File("src/main/kotlin/com/galkinalex/kotlincourse/lesson28/homework/task1/example.txt")
+    val file = File(ConstHomeWork28.WORKSPACE + "task1/example.txt")
     file.parentFile.mkdirs()
     val isNewFileCreated: Boolean = file.createNewFile()
     if (isNewFileCreated) {

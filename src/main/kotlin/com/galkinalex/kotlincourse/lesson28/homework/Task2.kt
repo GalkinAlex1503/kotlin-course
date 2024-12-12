@@ -6,7 +6,7 @@ import java.io.File
 //Создайте директорию workspace/task2/testDir
 //проверьте, является ли она директорией, и выведите её абсолютный путь.
 fun main() {
-    val file = File("src/main/kotlin/com/galkinalex/kotlincourse/lesson28/homework/task2/testDir")
+    val file = File(ConstHomeWork28.WORKSPACE + "task2/testDir")
     file.mkdirs()
     if (file.isDirectory) {
         println(file.absoluteFile)

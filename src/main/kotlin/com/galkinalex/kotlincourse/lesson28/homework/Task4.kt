@@ -15,7 +15,7 @@ fun main() {
         val tempDir = File(file.path).resolve(i.toString())
         tempDir.mkdirs()
         for (j in 1..3) {
-            val tempFile  = File(tempDir.path).resolve("$j.txt")
+            val tempFile = File(tempDir.path).resolve("$j.txt")
             tempFile.createNewFile()
         }
     }

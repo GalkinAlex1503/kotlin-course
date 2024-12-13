@@ -9,13 +9,13 @@ fun main() {
 
     val files: Array<File>? = workspace.listFiles()
     println("directories")
-    files?.forEach {  checkFiles(it , false) }
+    files?.forEach { checkFiles(it, false) }
     println("files")
-    files?.forEach {  checkFiles(it , true) }
+    files?.forEach { checkFiles(it, true) }
 
 }
 
-fun checkFiles(files: File , showFile: Boolean) {
+fun checkFiles(files: File, showFile: Boolean) {
     val files: Array<File>? = files.listFiles()
     files?.forEach {
         if (it.isFile) {

@@ -42,6 +42,16 @@ fun main() {
     // 6.
     identifyGeneration(myBirthday)
 
+    //    7. Создай два объекта даты: 25 февраля 2023 года и 25 февраля 2024 года.
+    //    Создай форматтер, который форматирует дату в месяц и день.
+    //    Выведи первую отформатированную дату, прибавив к ней 10 дней.
+    //    Выведи вторую отформатированную дату, прибавив к ней 10 дней.
+    //    Найди отличия)))
+    val task7data1 = LocalDate.of(2023, 2, 25)
+    val task7data2 = LocalDate.of(2024, 2, 25)
+    val formaterTask7: (LocalDate) -> String = { it.format(DateTimeFormatter.ofPattern("MM-dd")) }
+    println(formaterTask7(task7data1.plusDays(10)))
+    println(formaterTask7(task7data2.plusDays(10)))
 }
 
 //    4. Создай функцию, которая принимает тип Temporal и выводит форматированное значение в зависимости от того,

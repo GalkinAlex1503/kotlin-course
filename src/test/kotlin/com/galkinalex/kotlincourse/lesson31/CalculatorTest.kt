@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.function.Executable
 
 class CalculatorTest {
     @Test
@@ -17,7 +18,7 @@ class CalculatorTest {
     fun plus2() {
         val calc = Calculator()
         val actual = calc.plus(2, 3)
-        Assertions.assertEquals(6, actual)
+        Assertions.assertEquals(5, actual)
     }
 }
 
@@ -52,5 +53,14 @@ class SimpleTest {
         // Удаляем элемент и проверяем размер списка
         testList.remove("one")
         assertEquals(2, testList.size, "Размер списка должен быть 2")
+    }
+}
+
+
+class HelloJunit5Test {
+
+    @Test
+    fun `First test`() {
+        print("Hello, JUnit5!")
     }
 }

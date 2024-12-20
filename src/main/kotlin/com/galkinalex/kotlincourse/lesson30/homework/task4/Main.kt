@@ -15,8 +15,12 @@ fun superFilter(subFun: (Planets) -> Boolean): Planets {
 }
 
 fun main() {
-    val positiveFileter: (Planets) -> Boolean = {true}
+    val positiveFileter: (Planets) -> Boolean = {
+        it.distance <= 1.0 && it.ordinal > 1
+    }
     println(superFilter(positiveFileter))
-    val negativeFilter: (Planets) -> Boolean = {false}
+    val negativeFilter: (Planets) -> Boolean = {
+        it.name.startsWith("M")
+    }
     println(superFilter(negativeFilter))
 }

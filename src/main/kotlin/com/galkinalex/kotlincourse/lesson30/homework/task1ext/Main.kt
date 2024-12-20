@@ -6,10 +6,12 @@ package com.galkinalex.kotlincourse.lesson30.homework.task1ext
 //Задержку между сигналами можно выполнить через Thread.sleep() в который передаётся задержка в миллисекундах. Мигание выполняется через попеременный вызов clear() и showSignal() с задержками между ними в 300мс
 
 const val LIGHT_SYMBOL = "\u25CF"
+
 // Функция для отображения сигнала
 fun showSignal(signal: TrafficLightSignal) {
     print("\r" + signal.color.value + LIGHT_SYMBOL + Colors.RESET_COLOR.value) // Выводим сигнал с возвратом каретки
 }
+
 fun clear() {
     print("\r    ")
 }
@@ -23,18 +25,13 @@ fun blink(signal: TrafficLightSignal) {
 
 fun runLights() {
     while (true) {
-            for (n in TrafficLightSignal.entries) {
-                if (n.blinkTimes != null) {
-                    showSignal(n)
-                    Thread.sleep(n.duration * 1000)
-                    for (i in 1..n.blinkTimes ){
-                        blink(n)
-                    }
-                } else {
-                    showSignal(n)
-                    Thread.sleep(n.duration * 1000)
-                }
+        for (n in TrafficLightSignal.entries) {
+            showSignal(n)
+            Thread.sleep(n.duration * 1000)
+            if (n.blinkTimes != null) {
+                repeat(n.blinkTimes) { blink(n) }
             }
+        }
     }
 }
 

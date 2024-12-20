@@ -6,7 +6,7 @@ import com.galkinalex.kotlincourse.lesson30.homework.task1.TypeRealEstate
 // в порядке возрастания длины названия enum.
 
 fun printSort() {
-    TypeRealEstate.entries.sortedBy { it.description.length }.map { println(it.description) }
+    TypeRealEstate.entries.sortedBy { it.name.length }.map { println(it.description) }
 }
 
 fun main() {

@@ -110,7 +110,10 @@ class CerealStorageImplTest {
 
 
     @Test
-    fun getAmount() {
+    fun `should return the amount of cereal in container`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        storageTest.addCereal(Cereal.RICE, 5f)
+        assertEquals(5.0f, storageTest.getAmount(Cereal.RICE))
     }
 
     @Test

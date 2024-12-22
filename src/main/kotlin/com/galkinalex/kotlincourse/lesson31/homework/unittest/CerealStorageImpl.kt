@@ -56,7 +56,7 @@ class CerealStorageImpl(
     }
 
     override fun getAmount(cereal: Cereal): Float {
-        TODO("Not yet implemented")
+        return storage.getOrDefault(cereal,0f)
     }
 
     override fun getSpace(cereal: Cereal): Float {

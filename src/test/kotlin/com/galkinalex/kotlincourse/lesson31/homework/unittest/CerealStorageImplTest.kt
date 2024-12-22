@@ -43,12 +43,31 @@ class CerealStorageImplTest {
     }
 
     @Test
-    fun `should add the amount of cereal to the container`() {
+    fun `should add the amount of cereal to the container using the addCereal function`() {
         val storageTest = CerealStorageImpl(10f, 100f)
-        assertEquals(2f, storageTest.addCereal(Cereal.RICE, 2f))
+        assertEquals(0f, storageTest.addCereal(Cereal.RICE, 2f))
     }
-//    fun addCereal() {
-//    }
+
+    @Test
+    fun `should add more cereal than the maximum capacity to the container using the addCereal function`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        assertEquals(2f, storageTest.addCereal(Cereal.RICE, 12f))
+    }
+
+    @Test
+    fun `you should add a quantity of cereal equal to the maximum capacity to the container using the addCereal function`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        assertEquals(0f, storageTest.addCereal(Cereal.RICE, 10f))
+    }
+
+    @Test
+    fun `should throw an error when using the addCereal function with negative values`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        assertThrows(IllegalArgumentException::class.java) {
+            storageTest.addCereal(Cereal.RICE, -2f)
+        }
+    }
+
 
     @Test
     fun getCereal() {

@@ -46,7 +46,7 @@ class CerealStorageImpl(
     }
 
     override fun getSpace(cereal: Cereal): Float {
-        TODO("Not yet implemented")
+        return this.containerCapacity - storage.getOrDefault(cereal, 0f)
     }
 
     override fun toString(): String {
@@ -54,11 +54,9 @@ class CerealStorageImpl(
     }
 
     private fun checkStorageCapacity(cereal: Cereal) {
-
-//        if (storage.contains(cereal)) return
-//        check(storageCapacity >= (storage.size + 1) * containerCapacity) {
-//            "Недостаточно места в хранилище для нового контейнера"
-//        }
-
+        if (!storage.contains(cereal)) return
+        check(storageCapacity >= (storage.size + 1) * containerCapacity) {
+            "Недостаточно места в хранилище для нового контейнера"
+        }
     }
 }

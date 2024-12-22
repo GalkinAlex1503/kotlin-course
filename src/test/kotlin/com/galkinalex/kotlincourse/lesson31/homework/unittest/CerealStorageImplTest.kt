@@ -70,7 +70,26 @@ class CerealStorageImplTest {
 
 
     @Test
-    fun getCereal() {
+    fun `should return the amount of cereal received`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        storageTest.addCereal(Cereal.RICE, 2f)
+        assertEquals(2f, storageTest.getCereal(Cereal.RICE, 2f))
+    }
+
+    @Test
+    fun `should return the amount the remainder of cereal `() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        storageTest.addCereal(Cereal.RICE, 5f)
+        assertEquals(5f, storageTest.getCereal(Cereal.RICE, 7f))
+    }
+
+    @Test
+    fun `should throw an error when using the getCereal function with negative values`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        storageTest.addCereal(Cereal.RICE, 2f)
+        assertThrows(IllegalArgumentException::class.java) {
+            storageTest.getCereal(Cereal.RICE, -2f)
+        }
     }
 
     @Test

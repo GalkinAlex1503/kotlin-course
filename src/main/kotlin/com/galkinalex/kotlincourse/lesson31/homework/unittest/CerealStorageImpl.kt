@@ -32,9 +32,20 @@ class CerealStorageImpl(
         return amount - amountForAdding
     }
 
-
+    //need refactoring getCereal
     override fun getCereal(cereal: Cereal, amount: Float): Float {
-        TODO("Not yet implemented")
+        require(amount >= 0) {
+            "Количество крупы не может быть отрицательным"
+        }
+        var result = storage.getOrDefault(cereal,0f)
+        if(result >= amount ) {
+            result -= amount
+            storage[cereal] = result
+            return amount
+        } else {
+            storage[cereal] = 0f
+            return result
+        }
     }
 
     override fun removeContainer(cereal: Cereal): Boolean {
@@ -50,7 +61,7 @@ class CerealStorageImpl(
     }
 
     override fun toString(): String {
-        return  this.storage.map { "${it.key}: ${it.value}"}.joinToString("\n")
+        return this.storage.map { "${it.key}: ${it.value}" }.joinToString("\n")
     }
 
     private fun checkStorageCapacity(cereal: Cereal) {

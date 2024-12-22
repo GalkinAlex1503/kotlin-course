@@ -50,7 +50,7 @@ class CerealStorageImpl(
     }
 
     override fun toString(): String {
-        TODO("Not yet implemented")
+        return  this.storage.map { "${it.key}: ${it.value}"}.joinToString("\n")
     }
 
     private fun checkStorageCapacity(cereal: Cereal) {

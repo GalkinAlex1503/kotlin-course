@@ -1,6 +1,6 @@
 package com.galkinalex.kotlincourse.lesson31.homework.unittest
 
-import java.lang.Math.min
+import kotlin.math.min
 
 class CerealStorageImpl(
     override val containerCapacity: Float,

@@ -82,18 +82,20 @@ class CerealStorageImplTest {
     }
 
     @Test
-    fun getSpace() {
+    fun `should return the amount of cereal that the container can hold, taking into account its current fullness`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        storageTest.addCereal(Cereal.RICE, 2f)
+        assertEquals(8f, storageTest.getSpace(Cereal.RICE))
+    }
+
+    @Test
+    fun `must return the amount of cereal that is not in stock that the container can hold, taking into account its current filling`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        assertEquals(10f, storageTest.getSpace(Cereal.RICE))
     }
 
     @Test
     fun testToString() {
     }
 
-    @Test
-    fun getContainerCapacity() {
-    }
-
-    @Test
-    fun getStorageCapacity() {
-    }
 }

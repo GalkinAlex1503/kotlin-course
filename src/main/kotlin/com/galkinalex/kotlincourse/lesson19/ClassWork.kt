@@ -60,16 +60,16 @@ class Lamp {
     }
 }
 
-class GameConsole () {
-    fun startGame (name: String) {
+class GameConsole() {
+    fun startGame(name: String) {
 
     }
 
-    fun initHardware () {
+    fun initHardware() {
 
     }
 
-    fun loadGame (name: String) {
+    fun loadGame(name: String) {
 
     }
 

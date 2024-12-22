@@ -7,7 +7,7 @@ import com.galkinalex.kotlincourse.lesson30.homework.task1.StatusTests
 // принятая лямбда. Если без исключений - pass, если будет AssertionError - failure,
 // прочие исключения  - broken.
 
-fun testStart(subfun: () -> Unit):  StatusTests {
+fun testStart(subfun: () -> Unit): StatusTests {
     try {
         subfun()
         return StatusTests.PASS

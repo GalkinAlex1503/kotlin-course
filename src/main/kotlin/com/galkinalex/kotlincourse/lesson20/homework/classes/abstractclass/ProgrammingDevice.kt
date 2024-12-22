@@ -2,7 +2,7 @@ package com.galkinalex.kotlincourse.lesson20.homework.classes.abstractclass
 
 import com.galkinalex.kotlincourse.lesson20.homework.interfaces.Programmable
 
-abstract class ProgrammingDevice : PowerOnOffDevice(),  Programmable {
+abstract class ProgrammingDevice : PowerOnOffDevice(), Programmable {
 
     private val programme = mutableListOf<String>()
 

@@ -52,12 +52,12 @@ fun <T, K> combineAndTransform1(
     return funUnion(col1, col2)
 }
 
-fun <T,K,L: Collection<T>,M: Collection<K>> combineAndTransform2(
+fun <T, K, L : Collection<T>, M : Collection<K>> combineAndTransform2(
     col1: L,
     col2: L,
-    funUnion: (L,L) -> M
+    funUnion: (L, L) -> M
 ): M {
-    return funUnion(col1,col2)
+    return funUnion(col1, col2)
 }
 
 
@@ -167,8 +167,8 @@ fun main() {
     //    col2: L,
     //    funUnion: (L,L) -> M
     //): M
-    val funUnionNew: (List<Int>,List<Int>) -> Set<String> = { listOne, listTwo ->
-        val resultSet = (listOne + listTwo).map { it.toString()}.toSet()
+    val funUnionNew: (List<Int>, List<Int>) -> Set<String> = { listOne, listTwo ->
+        val resultSet = (listOne + listTwo).map { it.toString() }.toSet()
         resultSet
     }
 

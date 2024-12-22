@@ -12,9 +12,9 @@ fun main() {
     //Задание 5.
 
     //test data
-    val testList1 = listOf(1,2,3,4,5,6)
-    val testList2 = listOf(1,1,2,2,3,3)
-    val testList3 = listOf(1,2,3,4,5,6,3,7,9,2)
+    val testList1 = listOf(1, 2, 3, 4, 5, 6)
+    val testList2 = listOf(1, 1, 2, 2, 3, 3)
+    val testList3 = listOf(1, 2, 3, 4, 5, 6, 3, 7, 9, 2)
 
     //anonymous function
     val funTask5AnonymousFun = fun List<Int>.(): List<Int> {

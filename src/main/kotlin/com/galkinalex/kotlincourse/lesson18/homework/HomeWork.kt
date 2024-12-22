@@ -15,11 +15,11 @@ import com.galkinalex.kotlincourse.lesson18.homework.printers.LaserPrinter
 
 fun main() {
     val animals = listOf<Animal>(Dog(), Cat(), Bird())
-    animals.forEach{ it.makeSound()}
+    animals.forEach { it.makeSound() }
     println()
 
     val figure = listOf<Shape>(Circle(10.0), Square(3.0, 5.0), Triangle(2.0, 4.0, 30.0))
-    figure.forEach{ println(it.area())}
+    figure.forEach { println(it.area()) }
     println()
 
     LaserPrinter().doPrint("dfgd dfgdf jkljk")
@@ -33,7 +33,7 @@ fun main() {
     println(carts.toString())
     carts.addToCart(1, 2)
     println(carts.toString())
-    carts.addToCart(listOf(1,2,3))
+    carts.addToCart(listOf(1, 2, 3))
     println(carts.toString())
     println()
 
@@ -41,6 +41,6 @@ fun main() {
     val msg = "dsdfsdfsdfsdf"
     val log = Logger();
     log.log(msg)
-    log.log(msg, LevelDebug.INFO ,Colors.RED)
+    log.log(msg, LevelDebug.INFO, Colors.RED)
 
 }

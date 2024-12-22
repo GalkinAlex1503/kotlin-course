@@ -1,6 +1,6 @@
 package com.galkinalex.kotlincourse.lesson18.homework.figures
 
-class Square (
+class Square(
     val a: Double,
     val b: Double
 ) : Shape() {

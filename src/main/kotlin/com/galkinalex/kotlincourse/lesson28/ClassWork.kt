@@ -42,7 +42,7 @@ fun main() {
     file.walk().filter { it.isFile }
         .associate { it.name to it.readLines() }
         .filterValues { data ->
-            data.any {it.contains("text")}
+            data.any { it.contains("text") }
         }
 
     println(file.absoluteFile)

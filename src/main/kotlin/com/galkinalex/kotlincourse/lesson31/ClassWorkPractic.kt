@@ -1,6 +1,5 @@
 package com.galkinalex.kotlincourse.lesson31
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
 data class University(
@@ -25,7 +24,7 @@ data class Student(
 )
 
 fun main() {
-    val student1 = Student("John", "Doe", 20, "Computer Science" )
+    val student1 = Student("John", "Doe", 20, "Computer Science")
     val student2 = Student("Jane", "Doe", 19, null)
 
     val faculty = Faculty("Engineering", "Dr. Smith", 1965, listOf(student1, student2))

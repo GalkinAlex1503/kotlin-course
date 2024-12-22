@@ -1,6 +1,12 @@
 package com.galkinalex.kotlincourse.lesson22.homework
 
-import com.galkinalex.kotlincourse.lesson22.homework.extensions.*
+import com.galkinalex.kotlincourse.lesson22.homework.extensions.funA
+import com.galkinalex.kotlincourse.lesson22.homework.extensions.funB
+import com.galkinalex.kotlincourse.lesson22.homework.extensions.funC
+import com.galkinalex.kotlincourse.lesson22.homework.extensions.funD
+import com.galkinalex.kotlincourse.lesson22.homework.extensions.funE
+import com.galkinalex.kotlincourse.lesson22.homework.extensions.revert
+import com.galkinalex.kotlincourse.lesson22.homework.extensions.within
 
 //2. Сконструируй объекты, позволяющие вызвать определённые выше функции и вызови их.
 fun main() {
@@ -36,8 +42,8 @@ fun main() {
 
     println("Проверка допустимого отклонения числа")
     val explWithin = 100.0
-    val other =  101.0
+    val other = 101.0
     val deviation = 2.0
-    println("$explWithin  -> ${explWithin.within(other,deviation)} ")
+    println("$explWithin  -> ${explWithin.within(other, deviation)} ")
     println()
 }

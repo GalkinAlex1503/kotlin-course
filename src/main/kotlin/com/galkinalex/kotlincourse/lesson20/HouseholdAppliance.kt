@@ -52,6 +52,7 @@ class Microwave(brand: String) : HouseholdAppliance(brand) {
         println("Чистка микроволновой печи от $brand.")
     }
 }
+
 fun main() {
     val microwave = Microwave("Sony")
     microwave.powerOn()

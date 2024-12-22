@@ -1,7 +1,5 @@
 package com.galkinalex.kotlincourse.lesson23
 
-import javax.swing.text.html.HTML.Tag.I
-
 fun main() {
     val obj: Any = "Hello, World!"
 
@@ -37,8 +35,8 @@ fun main() {
         }
     }
 
-    val  i: Any =  "sdf"
-    println( i as String)
+    val i: Any = "sdf"
+    println(i as String)
     //println(i as Int)
 
 }

@@ -3,11 +3,12 @@ package com.galkinalex.kotlincourse.lesson18.homework.carts
 open class ShoppingCart(
     private val goods: MutableMap<Int, Int>
 ) {
-    override fun toString (): String {
+    override fun toString(): String {
         var result = ""
         goods.forEach { result += "id товара: ${it.key}, количество товара: ${it.value} \n" }
         return result
     }
+
     open fun addToCart(idGood: Int) {
         if (goods.containsKey(idGood)) {
             goods[idGood] = goods.getValue(idGood) + 1

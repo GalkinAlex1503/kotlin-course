@@ -57,6 +57,7 @@ fun multiplyByTwo(num: Int) = num * 2
 fun isEven(num: Int): Boolean {
     return num % 2 == 0
 }
+
 //
 //Задача 3:
 //Напишите функцию printNumbersUntil, которая принимает целое число n и выводит на экран числа от 1 до n. Если число n меньше 1, функция должна прекратить выполнение с помощью return без вывода сообщений.
@@ -67,6 +68,7 @@ fun printNumbersUntil(n: Int) {
         println(n)
     }
 }
+
 //Задача 4:
 //Создайте функцию findFirstNegative, которая принимает список целых чисел и возвращает первое отрицательное число в списке. Если отрицательных чисел нет, функция должна вернуть null.
 //
@@ -76,11 +78,12 @@ fun findFirstNegative(listNUm: List<Int>): Int? {
     }
     return null
 }
+
 //Задача 5:
 //Напишите функцию processList, которая принимает список строк. Функция должна проходить по списку и выводить каждую строку. Если встречается null значение, функция должна прекратить выполнение с помощью return без возврата значения.
 fun processList(listStr: List<String>) {
     for (elem in listStr) {
-        if (elem ==  null)  return
+        if (elem == null) return
     }
 }
 

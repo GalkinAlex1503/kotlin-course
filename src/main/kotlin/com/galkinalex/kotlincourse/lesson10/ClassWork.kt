@@ -27,17 +27,17 @@ fun main() {
 
     val empltySet = setOf<Int>()
     val setNum = setOf(1, 2, 3, 4, 5)
-    val setNum2 = mutableSetOf(1,2,3)
+    val setNum2 = mutableSetOf(1, 2, 3)
     setNum2.add(6)
     setNum2.remove(2)
     println(setNum2)
 
     for (elem in setNum2) {
-        println(elem*elem)
+        println(elem * elem)
     }
 
-    val set1 = setOf(1,2,3)
-    val set2 = setOf(3,5,6,7)
+    val set1 = setOf(1, 2, 3)
+    val set2 = setOf(3, 5, 6, 7)
     var emptySet = mutableSetOf<Int>()
 
     for (elem in set1) {
@@ -57,7 +57,7 @@ fun main() {
 
 }
 
-fun findNumber (setNum: Set<Int> , num: Int): Boolean {
+fun findNumber(setNum: Set<Int>, num: Int): Boolean {
     for (elem in setNum) {
         if (elem == num) {
             return true

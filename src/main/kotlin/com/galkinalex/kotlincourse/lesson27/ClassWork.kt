@@ -16,7 +16,7 @@ fun main() {
     }
 
     //with
-    with(list,l)
+    with(list, l)
     with(list) {
         println(size)
         add(3)
@@ -49,7 +49,7 @@ fun main() {
     }
 
     //also
-    list.also{
+    list.also {
         println("dfdgf")
     }.add(3)
 

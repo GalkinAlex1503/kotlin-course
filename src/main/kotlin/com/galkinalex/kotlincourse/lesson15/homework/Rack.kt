@@ -83,7 +83,7 @@ class Rack(
         return false
     }
 
-    fun getShelvesList (): List<Shelf> {
+    fun getShelvesList(): List<Shelf> {
         return this.shelves.toList()
     }
 
@@ -93,7 +93,7 @@ class Rack(
         }
     }
 
-    fun advancedRemoveShelf():List<String>? {
+    fun advancedRemoveShelf(): List<String>? {
         return null
     }
 }

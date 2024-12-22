@@ -2,10 +2,9 @@ package com.galkinalex.kotlincourse.lesson31
 
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.function.Executable
 
 class CalculatorTest {
     @Test
@@ -14,6 +13,7 @@ class CalculatorTest {
         val actual = calc.plus(2, 3)
         Assertions.assertEquals(5, actual)
     }
+
     @Test
     fun plus2() {
         val calc = Calculator()

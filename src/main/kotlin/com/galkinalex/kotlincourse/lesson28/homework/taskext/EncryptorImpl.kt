@@ -1,6 +1,6 @@
 package com.galkinalex.kotlincourse.lesson28.homework.taskext
 
-class EncryptorImpl (
+class EncryptorImpl(
     private val encKey: Int
 ) : Encryptor {
     override fun encrypt(content: String): String {

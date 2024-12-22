@@ -1,8 +1,6 @@
 package com.galkinalex.kotlincourse.lesson25.homework
 
-import com.galkinalex.kotlincourse.lesson25.homework.extension.funTask5
 import com.galkinalex.kotlincourse.lesson25.homework.extension.funTask6
-import java.lang.IllegalStateException
 
 //Задание 6. Создай функцию расширение словаря из строк и чисел, которая принимает число и
 // возвращает список ключей,

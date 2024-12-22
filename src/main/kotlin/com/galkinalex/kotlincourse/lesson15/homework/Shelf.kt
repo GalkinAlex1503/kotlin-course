@@ -47,14 +47,14 @@ class Shelf(
     }
 
     fun canAccommodate(nameItem: String): Boolean {
-        return  this.items.sumOf { it.length } + nameItem.length <= this.capacity
+        return this.items.sumOf { it.length } + nameItem.length <= this.capacity
     }
 
-    fun isItemExists (nameItem: String): Boolean {
+    fun isItemExists(nameItem: String): Boolean {
         return this.items.contains(nameItem)
     }
 
-    fun getItemsList ():List<String>   {
+    fun getItemsList(): List<String> {
         return this.items.toList()
     }
 }

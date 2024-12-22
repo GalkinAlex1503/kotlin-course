@@ -3,6 +3,7 @@ package com.galkinalex.kotlincourse.lesson22
 fun String.removeSpaces(): String {
     return replace(" ", "")
 }
+
 fun <T> List<T?>.isElementsNullOrEmpty(): Boolean {
     return this.all { it == null } || this.isEmpty()
 }
@@ -16,7 +17,7 @@ fun List<Int>.funB(arg1: String?) {
 
 }
 
-fun <KEY,VAL> Map<KEY,VAL>.funC(arg1: KEY, arg2: VAL): Boolean {
+fun <KEY, VAL> Map<KEY, VAL>.funC(arg1: KEY, arg2: VAL): Boolean {
     return true
 }
 
@@ -29,7 +30,6 @@ fun <T> Set<T>.funE(arg1: T): List<T> {
 }
 
 
-
 fun main() {
     val result = "String with spaces".removeSpaces()
     println(result)
@@ -37,13 +37,13 @@ fun main() {
     val s: List<Int?> = listOf(1, null)
     s.isElementsNullOrEmpty()
 
-    println(   "sdsfd".funA("sdfsdf", 1)  )
-   listOf(1,2,).funB(null)
-    val  num: Map<String, Int> = mapOf("sadfsd" to 1, "gfhf" to 2)
-    num.funC<String,Any>("dfs", true)
+    println("sdsfd".funA("sdfsdf", 1))
+    listOf(1, 2).funB(null)
+    val num: Map<String, Int> = mapOf("sadfsd" to 1, "gfhf" to 2)
+    num.funC<String, Any>("dfs", true)
 
     var num2 = null
-   // println(num2.funD(0.2, "hjdfs"))
+    // println(num2.funD(0.2, "hjdfs"))
     num2.funD(0.3, "sdf")
 
 

@@ -3,7 +3,7 @@ package com.galkinalex.kotlincourse.lesson30.homework.task1
 //Создай Enum с планетами солнечной системы, включая расстояние до солнца
 // в астрономических единицах и вес планеты.
 
-enum class Planets (
+enum class Planets(
     val distance: Double
 ) {
     MERCURY(0.39),

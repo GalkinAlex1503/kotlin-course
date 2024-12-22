@@ -121,31 +121,31 @@ fun getLogDate(txt: String) {
     println("${dateBlock[0]} ${dateBlock[1]}")
 }
 
-fun maskNumber (txt: String): String {
+fun maskNumber(txt: String): String {
     return "**** **** **** ${txt.substring(15)}"
 }
 
-fun transformEMail (txt: String): String {
+fun transformEMail(txt: String): String {
     return "${txt.split("@")[0]} [at] ${txt.split("@")[1].split(".")[0]} [dot] ${txt.split("@")[1].split(".")[1]}"
 }
 
-fun getFileName (txt: String): String {
+fun getFileName(txt: String): String {
     return txt.reversed().split("/")[0].reversed()
 }
 
-fun makeAbbreviation (txt: String): String {
+fun makeAbbreviation(txt: String): String {
     if (txt.isEmpty()) return txt
     if (!txt.contains(" ")) return txt[0].uppercase()
 
     var result = ""
-    for (word in txt.split(" ", "-"))   result += word[0].uppercase()
+    for (word in txt.split(" ", "-")) result += word[0].uppercase()
 
-    return  result
+    return result
 }
 
-fun formatString (txt: String): String {
-    var result =  ""
-    for (elem in txt.split(" "))   result += "${elem[0].uppercase()}${elem.substring(1)} "
+fun formatString(txt: String): String {
+    var result = ""
+    for (elem in txt.split(" ")) result += "${elem[0].uppercase()}${elem.substring(1)} "
 
     return result.trim()
 }
@@ -156,7 +156,7 @@ fun encrypt(txt: String): String {
     for (elem in (if (txt.length % 2 == 1) "$txt " else txt).chunked(2)) {
         result += elem.reversed()
     }
-    return  result
+    return result
 }
 
 fun dencrypt(txt: String): String {
@@ -165,12 +165,12 @@ fun dencrypt(txt: String): String {
     for (elem in txt.chunked(2)) {
         result += elem.reversed()
     }
-    return  result
+    return result
 }
 
-fun createTable (x: Int, y: Int): String {
+fun createTable(x: Int, y: Int): String {
     var result = ""
-    val lengthCell =  (x * y).toString().length
+    val lengthCell = (x * y).toString().length
 
     for (i in 0..x) {
         for (j in 0..y) {
@@ -192,7 +192,7 @@ fun createTable (x: Int, y: Int): String {
     return result
 }
 
-fun fillCell (lf: Int, cellValue: Int): String {
+fun fillCell(lf: Int, cellValue: Int): String {
     var result = ""
     for (i in 0..(lf - cellValue.toString().length)) {
         result += " "

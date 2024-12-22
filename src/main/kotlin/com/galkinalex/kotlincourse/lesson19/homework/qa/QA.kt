@@ -17,7 +17,7 @@ abstract class BaseClass(
         }
     protected var protectedField = "измени меня из функции main() через сеттер в наследнике"
     private var privateField = "добавь сеттер чтобы изменить меня из main()"
-    fun setPrivateField (value: String) {
+    fun setPrivateField(value: String) {
         privateField = value
     }
 
@@ -38,7 +38,7 @@ abstract class BaseClass(
     }
 
     // объясни, почему эта функция не может быть публичной  --->  она возвращает класс который обявлен внутри текущего класса как протектед, и не может быть возвращен мне этого класса публичной функцией
-     protected open fun getProtectedClass() = ProtectedClass()
+    protected open fun getProtectedClass() = ProtectedClass()
 
     protected open fun verifyPublicField(value: String): Boolean {
         return value.length < 3
@@ -70,12 +70,13 @@ class ChildrenClass(
     private fun privatePrint() {
         println("Печать из класса ChildrenClass")
     }
+
     // ---> изменение проверки длины чтобы работал сеттер
     override fun verifyPublicField(value: String): Boolean {
         return value.length > 3
     }
 
-    fun setProtField (value: String) {
+    fun setProtField(value: String) {
         protectedField = value
     }
 

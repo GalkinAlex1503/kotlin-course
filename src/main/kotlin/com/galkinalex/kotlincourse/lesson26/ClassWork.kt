@@ -15,16 +15,17 @@ data class User(val name: String)
 
 fun test() {
 
-val fetcher: (String) -> List<Map<String, Any>>  = {
-    // orm.select(it).map {Listof()}
-    listOf(mapOf("dfsd" to "dfg"))
+    val fetcher: (String) -> List<Map<String, Any>> = {
+        // orm.select(it).map {Listof()}
+        listOf(mapOf("dfsd" to "dfg"))
+    }
+
+    val transformer = {
+
+    }
+
 }
 
-val transformer =  {
-
-}
-
-}
 fun main() {
 
     val fetcher: (String) -> List<Map<String, Any>> = {

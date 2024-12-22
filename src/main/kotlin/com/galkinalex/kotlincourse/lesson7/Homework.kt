@@ -11,7 +11,7 @@ fun main() {
     }
     println("")
     for (i in 1..10) {
-        if (i%2 == 0) {
+        if (i % 2 == 0) {
             println(i)
         }
     }
@@ -19,12 +19,12 @@ fun main() {
 
     //Обратный Диапазон:
     println("Обратный Диапазон:")
-    for (i in 5 downTo  1) {
+    for (i in 5 downTo 1) {
         println(i)
     }
     println("")
     for (i in 10 downTo 1) {
-        println( i - 2)
+        println(i - 2)
     }
     println("")
 
@@ -57,7 +57,7 @@ fun main() {
     println("Задания для Цикла while")
     println("Цикл while:")
     var counter = 0
-    while (counter++ < 5 ) {
+    while (counter++ < 5) {
         println(counter * counter)
     }
     println("")
@@ -73,15 +73,13 @@ fun main() {
     counter = 5
     do {
         println(counter)
-    }
-    while (counter-- > 1)
+    } while (counter-- > 1)
     println("")
 
-    counter =5
+    counter = 5
     do {
         println(counter)
-    }
-    while (counter++ < 10)
+    } while (counter++ < 10)
     println("")
 
     //Задания для Прерывания и Пропуска Итерации
@@ -111,7 +109,7 @@ fun main() {
     println("Использование continue:")
     //В цикле for от 1 до 10 используйте continue, чтобы пропустить четные числа.
     for (i in 1..10) {
-        if (i%2 == 0)  {
+        if (i % 2 == 0) {
             continue
         }
         println(i)
@@ -120,7 +118,7 @@ fun main() {
 
     counter = 0
     while (counter++ < 10) {
-        if (counter%3 == 0) {
+        if (counter % 3 == 0) {
             continue
         }
         println(counter)
@@ -129,9 +127,9 @@ fun main() {
 
     //Задача на вложенный цикл
     println("Задача на вложенный цикл")
-    for (i in 1..10){
+    for (i in 1..10) {
         for (j in 1..10) {
-            print("${i*j} ")
+            print("${i * j} ")
         }
         println("")
     }

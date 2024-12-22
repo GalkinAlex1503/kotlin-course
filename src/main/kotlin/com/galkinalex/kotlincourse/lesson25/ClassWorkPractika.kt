@@ -34,11 +34,11 @@ fun main() {
         list.filter { it > 0 }.sum()
     }
 
-    val fun14 = {list : List<Int> ->
+    val fun14 = { list: List<Int> ->
         list.filter { it > 0 }.sum()
     }
 
-    val filterEvan1  = fun  Set<Int>.(): Set<Int> {
+    val filterEvan1 = fun Set<Int>.(): Set<Int> {
         return filter { it % 2 == 0 }.toSet()
     }
 

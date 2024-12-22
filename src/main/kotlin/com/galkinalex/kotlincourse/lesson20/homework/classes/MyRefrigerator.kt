@@ -4,8 +4,8 @@ import com.galkinalex.kotlincourse.lesson20.homework.classes.abstractclass.SetTe
 
 class MyRefrigerator(
     private val model: String
-): SetTemperatureDevice() {
-     fun getModel ():  String {
-         return model
-     }
+) : SetTemperatureDevice() {
+    fun getModel(): String {
+        return model
+    }
 }

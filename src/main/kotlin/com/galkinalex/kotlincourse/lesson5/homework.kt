@@ -20,11 +20,11 @@ fun calcSoundLevelDown(levelSound: Double, rateLevelDown: Double?) {
     println(currentLevel)
 }
 
-fun calcTotalPay (praice: Double?) {
-    val totalPraice = (praice ?: 50.0) + ( (praice ?: 50.0)  *  0.5 / 100 )
+fun calcTotalPay(praice: Double?) {
+    val totalPraice = (praice ?: 50.0) + ((praice ?: 50.0) * 0.5 / 100)
     println(totalPraice)
 }
 
-fun hasPressure (pressure: Int?) {
+fun hasPressure(pressure: Int?) {
     pressure ?: throw Exception("отсутствует показатель атмосферного давления")
 }

@@ -1,7 +1,5 @@
 package com.galkinalex.kotlincourse.lesson25.homework.extension
 
-import java.lang.IllegalStateException
-
 //Задание 6. Создай функцию расширение словаря из строк и чисел,
 // которая принимает число и возвращает список ключей,
 // длина которых меньше их значений но больше заданного в функции аргумента.
@@ -27,12 +25,12 @@ fun Map<String, Int>.funTask6(num: Int): List<String> {
 // вернуть конкатенацию всех данных которые ей доступны (порядок неважен).
 // Конкатенация - это присоединение. Код должен быть отформатирован таким образом, чтобы легко читался.
 
-fun Map<List<Any?>,Set<Any?>>.funTask7(arg: Any?) : String {
+fun Map<List<Any?>, Set<Any?>>.funTask7(arg: Any?): String {
     println("start")
     println("arg: $arg")
     this.forEach { (k, v) ->
         println("${k.toString()} to ${v.toString()}")
     }
     println("finish")
-    return this.map { (k,v) -> k.toString() + v.toString()}.joinToString(" || ")
+    return this.map { (k, v) -> k.toString() + v.toString() }.joinToString(" || ")
 }

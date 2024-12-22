@@ -171,13 +171,13 @@ fun main() {
     println("Task 26")
 //    Проверьте, прошли ли успешно все автоматизированные тесты в словаре с результатами.
     val mapTask26 = mapOf("Test1_3" to "Passed", "Test2_1" to "Failed", "Test2_3" to "Skipped")
-    println(mapTask26.all { it.value == "Passed"})
+    println(mapTask26.all { it.value == "Passed" })
     println()
 
     println("Task 27")
 //    Определите, содержит ли словарь с результатами тестирования хотя бы один тест с ошибкой.
     val mapTask27 = mapOf("Test1_3" to "Passed", "Test2_1" to "Failed", "Test2_3" to "Skipped")
-    println(mapTask27.any { it.value == "Failed"})
+    println(mapTask27.any { it.value == "Failed" })
     println()
 
     println("Task 28")

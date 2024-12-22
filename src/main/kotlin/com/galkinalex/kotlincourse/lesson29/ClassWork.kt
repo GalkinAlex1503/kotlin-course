@@ -1,6 +1,13 @@
 package com.galkinalex.kotlincourse.lesson29
 
-import java.time.*
+import java.time.Duration
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.Period
+import java.time.ZoneId
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
 fun main() {
@@ -70,6 +77,6 @@ fun main() {
 //    }
 
     val parsedDate = LocalDate.parse(prettyFormattedDate, prettyFormatter)
-    println("--- "  + parsedDate)
+    println("--- " + parsedDate)
 
 }

@@ -11,7 +11,7 @@ import com.galkinalex.kotlincourse.lesson30.homework.task1.Planets
 // или выкинуть исключение если список пустой.
 
 fun superFilter(subFun: (Planets) -> Boolean): Planets {
-        return  Planets.entries.firstOrNull(subFun) ?: throw Exception ("список пустой")
+    return Planets.entries.firstOrNull(subFun) ?: throw Exception("список пустой")
 }
 
 fun main() {

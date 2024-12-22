@@ -30,8 +30,8 @@ fun Char?.funB(arg1: Int, arg2: Int, arg3: Boolean) {
 
 fun <T> MutableList<T>.funC(arg1: T?, arg2: Int): T? {
     if (arg2 >= this.size) return null
-    return  if (this.get(arg2) === arg1) arg1
-            else null
+    return if (this.get(arg2) === arg1) arg1
+    else null
 
 }
 

@@ -36,6 +36,6 @@ fun main() {
 }
 
 //normal function
-fun funTask1 () {
+fun funTask1() {
     println(ConstHomeWork.TXT)
 }

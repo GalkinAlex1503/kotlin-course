@@ -1,6 +1,6 @@
 package com.galkinalex.kotlincourse.lesson17.homework.edu
 
-class HightEduOrg (
+class HightEduOrg(
     name: String
 ) : EducationalOrganization(name) {
 

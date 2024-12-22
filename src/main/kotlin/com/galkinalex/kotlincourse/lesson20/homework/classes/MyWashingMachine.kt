@@ -1,26 +1,25 @@
 package com.galkinalex.kotlincourse.lesson20.homework.classes
 
-import com.galkinalex.kotlincourse.lesson13.analize
 import com.galkinalex.kotlincourse.lesson20.homework.classes.abstractclass.SetTemperatureDevice
 import com.galkinalex.kotlincourse.lesson20.homework.interfaces.Drainable
 import com.galkinalex.kotlincourse.lesson20.homework.interfaces.WaterConnection
 import com.galkinalex.kotlincourse.lesson20.homework.interfaces.WaterContainer
 
-class MyWashingMachine (
+class MyWashingMachine(
     private val model: String,
 
-): SetTemperatureDevice() , WaterConnection, WaterContainer, Drainable {
+    ) : SetTemperatureDevice(), WaterConnection, WaterContainer, Drainable {
     override val maxTemperature = 60
     override val capacity = 40
     private var currentCapacity = 0
     private var isConnectWater = false
     private var isConnectDrain = false
 
-    fun getModel ():  String {
+    fun getModel(): String {
         return model
     }
 
-    fun getCurrentCapacity (): Int {
+    fun getCurrentCapacity(): Int {
         return currentCapacity
     }
 
@@ -38,7 +37,6 @@ class MyWashingMachine (
         currentCapacity = amount
         println("fill water")
     }
-
 
 
     override fun connectToDrain() {

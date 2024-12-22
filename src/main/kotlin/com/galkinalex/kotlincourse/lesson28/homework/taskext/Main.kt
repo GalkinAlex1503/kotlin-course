@@ -9,7 +9,7 @@ fun main() {
 
     val encryptorImpl = EncryptorImpl(5)
     val fileProcessorImpl = FileProcessorImpl()
-    val encryptionManager = EncryptionManager(fileProcessorImpl,encryptorImpl )
+    val encryptionManager = EncryptionManager(fileProcessorImpl, encryptorImpl)
 
     encryptionManager.encryptFilesInDirectory(workDir, backDir, "txt")
 

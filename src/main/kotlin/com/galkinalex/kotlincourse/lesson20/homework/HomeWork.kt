@@ -33,7 +33,7 @@ fun main() {
     myKettle.powerOn()
 
     //духовка
-    val myOven =  MyOven("Gorenjie")
+    val myOven = MyOven("Gorenjie")
     println(myOven.getModel())
     myOven.setTemperature(200)
     myOven.open()

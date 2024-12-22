@@ -42,7 +42,7 @@ fun main() {
             is NullPointerException -> println("This is NullPointerException  e: $e")
             is ArrayIndexOutOfBoundsException -> println("This is ArrayIndexOutOfBoundsException  e: $e")
             is ClassCastException -> println("This is ClassCastException  e: $e")
-            is NumberFormatException ->  println("This is NumberFormatException  e: $e")
+            is NumberFormatException -> println("This is NumberFormatException  e: $e")
             is IllegalArgumentException -> println("This is IllegalArgumentException  e: $e")
             is IllegalStateException -> println("This is IllegalStateException  e: $e")
             is OutOfMemoryError -> println("This is OutOfMemoryError  e: $e")

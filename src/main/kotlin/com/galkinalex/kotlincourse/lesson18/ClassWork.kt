@@ -94,7 +94,7 @@ fun main() {
     println(cal.sum(1, 2))
     println(cal.sum(1.0, 2.0))
     println(cal.sum("1", "2"))
-    println(cal.sum(listOf(1,2), listOf(3,4)))
+    println(cal.sum(listOf(1, 2), listOf(3, 4)))
     println(cal.sum("1", true))
 
     val num = 10

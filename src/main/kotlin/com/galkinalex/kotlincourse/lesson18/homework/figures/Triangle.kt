@@ -1,8 +1,8 @@
 package com.galkinalex.kotlincourse.lesson18.homework.figures
 
-import kotlin.math.*
+import kotlin.math.sin
 
-class Triangle (
+class Triangle(
     val a: Double,
     val b: Double,
     val angle: Double

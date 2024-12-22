@@ -21,7 +21,7 @@ fun calcDay(day: String, bDay: String): String {
         return "Сегодня тот самый день! С днем рождения!"
     } else {
         val monthToDay = getMonth(day, bDay)
-        return  if (monthToDay == 0) {
+        return if (monthToDay == 0) {
             "День рождения уже скоро!"
         } else {
             "Сегодня не тот день! Ждите еще $monthToDay месяцев"
@@ -44,13 +44,13 @@ fun getMonth(day: String, bDay: String): Int {
     return if (month == bMonth) {
         if (curDay < dayB) {
             0
-        } else  {
+        } else {
             12
         }
     } else {
         if (month < bMonth) {
             bMonth - month
-        } else  {
+        } else {
             (12 - month) + bMonth
         }
     }

@@ -1,7 +1,5 @@
 package com.galkinalex.kotlincourse.lesson6
 
-import kotlin.math.round
-
 fun main() {
 
     // Задание 1: "Определение Сезона"
@@ -139,11 +137,11 @@ fun getTemperature(degrees: Int, typeTemperate: String): String {
     val convDegrees: Double
     if (typeTemperate != "C" && typeTemperate != "F") return "Invalid type of temperature"
     if (typeTemperate == "C") {
-         convDegrees = (degrees * 1.8 ) + 32.0
-        return  "$convDegrees F"
+        convDegrees = (degrees * 1.8) + 32.0
+        return "$convDegrees F"
     } else {
-        convDegrees = (degrees - 32.0 ) * 1.8
-        return  "$convDegrees C"
+        convDegrees = (degrees - 32.0) * 1.8
+        return "$convDegrees C"
     }
 
 }
@@ -165,12 +163,15 @@ fun calcCategoryFilm(age: Int): String {
         age < 0 -> {
             "Invalid age"
         }
+
         age in 0..12 -> {
             "детские"
         }
+
         age in 13..17 -> {
             "детские и подростковые"
         }
+
         else -> {
             "детские и подростковые и 18+"
         }

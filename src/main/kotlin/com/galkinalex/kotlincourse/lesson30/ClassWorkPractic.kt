@@ -1,8 +1,6 @@
 package com.galkinalex.kotlincourse.lesson30
 
-import java.lang.IllegalArgumentException
-
-enum class Seasons (
+enum class Seasons(
     val firstMonth: String,
     val isVolatileDuration: Boolean
 ) {
@@ -11,12 +9,15 @@ enum class Seasons (
     SUMMER("june", false),
     AUTUMN("september", false),
     ;
-    fun showInfo () {
+
+    fun showInfo() {
         println("In $this ${if (isVolatileDuration) "not constant" else "constant"} numbers of days")
     }
+
     companion object {
-        fun getMonth (month: String): Seasons {
-            return entries.filter { it.firstMonth == month}.firstOrNull() ?: throw IllegalArgumentException("no seasons")
+        fun getMonth(month: String): Seasons {
+            return entries.filter { it.firstMonth == month }.firstOrNull()
+                ?: throw IllegalArgumentException("no seasons")
         }
     }
 }
@@ -31,7 +32,7 @@ interface HasAction {
 
 enum class HomeDevices(
     override val value: String
-) :Hasvalue, HasAction {
+) : Hasvalue, HasAction {
     FRIDGE("fridger") {
         override fun action() {
             println("ffrrrrr")
@@ -53,7 +54,7 @@ enum class HomeDevices(
 
 fun main() {
     Seasons.WINTER.showInfo()
-    println(Seasons.getMonth("december") )
+    println(Seasons.getMonth("december"))
 //    println(Seasons.getMonth("dfgdf") )
 
 

@@ -2,9 +2,10 @@ package com.galkinalex.kotlincourse.lesson26
 
 fun funA(
     arg1: () -> Unit
-) {}
+) {
+}
 
-fun funC (
+fun funC(
     arg1: (Int) -> String
 ) {
     println(arg1(5))
@@ -17,7 +18,6 @@ fun <T> newFun(
 ): T {
     return arg1(arg2)
 }
-
 
 
 fun main() {
@@ -37,11 +37,11 @@ fun main() {
         it.sum()
     }
 
-    val val4: (List<String>) -> String  = { list ->
+    val val4: (List<String>) -> String = { list ->
         list.joinToString { it }
     }
 
-    println( newFun( val3, listOf(1,2,3,4))  )
-    println( newFun( val4, listOf("asd","dfg","765","090")) )
+    println(newFun(val3, listOf(1, 2, 3, 4)))
+    println(newFun(val4, listOf("asd", "dfg", "765", "090")))
 
 }

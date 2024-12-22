@@ -1,6 +1,6 @@
 package com.galkinalex.kotlincourse.lesson8
 
 fun main() {
-lateinit var  num: String
+    lateinit var num: String
 
 }

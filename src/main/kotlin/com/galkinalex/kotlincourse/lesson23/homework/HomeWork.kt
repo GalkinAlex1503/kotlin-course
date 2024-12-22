@@ -47,9 +47,11 @@ fun getStringLengthOrZero(param: Any?): Int {
 fun calcSquare(num: Any): Double {
     return when (num) {
         is String -> num.toDouble() * num.toDouble()
-        is Int-> num.toDouble() * num.toDouble()
+        is Int -> num.toDouble() * num.toDouble()
         is Double -> num * num
-        else -> {0.0}
+        else -> {
+            0.0
+        }
     }
 }
 
@@ -60,7 +62,7 @@ fun calcSquare(num: Any): Double {
 
 fun sumIntOrDoubleValues(listElem: List<Any>): Double {
     var result = 0.0
-    return listElem.map { (it as? Number ?: 0.0).toDouble()}.sum()
+    return listElem.map { (it as? Number ?: 0.0).toDouble() }.sum()
 }
 
 //Задача 6
@@ -107,7 +109,7 @@ fun main() {
     println()
 
     println("Task 6")
-    val listTask6 = listOf("sdfs","fghfg", 13)
+    val listTask6 = listOf("sdfs", "fghfg", 13)
     println(listTask6)
     tryCastToListAndPrint(listTask6)
 

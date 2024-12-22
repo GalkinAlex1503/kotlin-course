@@ -32,19 +32,17 @@ class CerealStorageImpl(
         return amount - amountForAdding
     }
 
-    //need refactoring getCereal
     override fun getCereal(cereal: Cereal, amount: Float): Float {
         require(amount >= 0) {
             "Количество крупы не может быть отрицательным"
         }
-        var result = storage.getOrDefault(cereal,0f)
-        if(result >= amount ) {
-            result -= amount
-            storage[cereal] = result
+        val current = storage.getOrDefault(cereal,0f)
+        if(current >= amount ) {
+            storage[cereal] = current - amount
             return amount
         } else {
             storage[cereal] = 0f
-            return result
+            return current
         }
     }
 

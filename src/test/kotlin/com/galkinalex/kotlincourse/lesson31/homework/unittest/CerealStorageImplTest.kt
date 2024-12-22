@@ -3,6 +3,8 @@ package com.galkinalex.kotlincourse.lesson31.homework.unittest
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 
 class CerealStorageImplTest {
@@ -93,8 +95,19 @@ class CerealStorageImplTest {
     }
 
     @Test
-    fun removeContainer() {
+    fun `should be destroyed the empty container`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        storageTest.addCereal(Cereal.RICE, 0f)
+        assertTrue(storageTest.removeContainer(Cereal.RICE))
     }
+
+    @Test
+    fun `should be return false then container is not empty`() {
+        val storageTest = CerealStorageImpl(10f, 100f)
+        storageTest.addCereal(Cereal.RICE, 5f)
+        assertFalse(storageTest.removeContainer(Cereal.RICE))
+    }
+
 
     @Test
     fun getAmount() {
@@ -117,7 +130,7 @@ class CerealStorageImplTest {
     fun `should return a string representation of a single container storage`() {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 2.4f)
-        assertEquals("RICE: 2.4" , storageTest.toString())
+        assertEquals("RICE: 2.4", storageTest.toString())
     }
 
     @Test
@@ -125,7 +138,7 @@ class CerealStorageImplTest {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 2f)
         storageTest.addCereal(Cereal.BULGUR, 4.5f)
-        assertEquals("RICE: 2.0\nBULGUR: 4.5" , storageTest.toString())
+        assertEquals("RICE: 2.0\nBULGUR: 4.5", storageTest.toString())
     }
 
 }

@@ -36,8 +36,8 @@ class CerealStorageImpl(
         require(amount >= 0) {
             "Количество крупы не может быть отрицательным"
         }
-        val current = storage.getOrDefault(cereal,0f)
-        if(current >= amount ) {
+        val current = storage.getOrDefault(cereal, 0f)
+        if (current >= amount) {
             storage[cereal] = current - amount
             return amount
         } else {
@@ -47,7 +47,12 @@ class CerealStorageImpl(
     }
 
     override fun removeContainer(cereal: Cereal): Boolean {
-        TODO("Not yet implemented")
+        if (storage[cereal] == 0f) {
+            storage.remove(cereal)
+            return true
+        } else {
+            return false
+        }
     }
 
     override fun getAmount(cereal: Cereal): Float {

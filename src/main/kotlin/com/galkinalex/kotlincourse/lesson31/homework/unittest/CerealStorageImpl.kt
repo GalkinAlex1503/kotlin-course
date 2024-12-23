@@ -70,7 +70,7 @@ class CerealStorageImpl(
 
     private fun checkStorageCapacity(cereal: Cereal) {
         if (storage.contains(cereal)) return
-        require(storageCapacity >= (storage.size + 1) * containerCapacity) {
+        check(storageCapacity >= (storage.size + 1) * containerCapacity) {
             "Недостаточно места в хранилище для нового контейнера"
         }
     }

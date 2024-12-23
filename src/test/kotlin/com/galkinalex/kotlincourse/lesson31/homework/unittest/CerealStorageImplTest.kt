@@ -75,7 +75,7 @@ class CerealStorageImplTest {
         val storageTest = CerealStorageImpl(10f, 20f)
         storageTest.addCereal(Cereal.RICE, 2f)
         storageTest.addCereal(Cereal.BULGUR, 3f)
-        assertThrows(IllegalArgumentException::class.java) {
+        assertThrows(IllegalStateException::class.java) {
             storageTest.addCereal(Cereal.MILLET, 5f)
         }
     }

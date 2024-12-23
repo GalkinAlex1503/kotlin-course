@@ -65,7 +65,7 @@ class CerealStorageImpl(
     }
 
     override fun toString(): String {
-        return storage.map { "${it.key}: ${it.value}" }.joinToString("\n")
+        return storage.map { "${it.key.local}: ${it.value}" }.joinToString("\n")
     }
 
     private fun checkStorageCapacity(cereal: Cereal) {

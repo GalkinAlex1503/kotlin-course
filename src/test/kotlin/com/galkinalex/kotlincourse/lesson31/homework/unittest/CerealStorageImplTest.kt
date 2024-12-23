@@ -142,7 +142,7 @@ class CerealStorageImplTest {
     fun `should return a string representation of a single container storage`() {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 2.4f)
-        assertEquals("RICE: 2.4", storageTest.toString())
+        assertEquals("Рис: 2.4", storageTest.toString())
     }
 
     @Test
@@ -150,7 +150,7 @@ class CerealStorageImplTest {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 2f)
         storageTest.addCereal(Cereal.BULGUR, 4.5f)
-        assertEquals("RICE: 2.0\nBULGUR: 4.5", storageTest.toString())
+        assertEquals("Рис: 2.0\nБулгур: 4.5", storageTest.toString())
     }
 
 }

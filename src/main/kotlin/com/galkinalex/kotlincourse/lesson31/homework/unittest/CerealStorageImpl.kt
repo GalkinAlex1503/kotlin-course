@@ -36,40 +36,41 @@ class CerealStorageImpl(
         require(amount >= 0) {
             "Количество крупы не может быть отрицательным"
         }
-        val current = storage.getOrDefault(cereal, 0f)
-        if (current >= amount) {
+
+        val current = getAmount(cereal)
+        return if (current >= amount) {
             storage[cereal] = current - amount
-            return amount
+            amount
         } else {
             storage[cereal] = 0f
-            return current
+            current
         }
     }
 
     override fun removeContainer(cereal: Cereal): Boolean {
-        if (storage[cereal] == 0f) {
+        return if (storage[cereal] == 0f) {
             storage.remove(cereal)
-            return true
+            true
         } else {
-            return false
+            false
         }
     }
 
     override fun getAmount(cereal: Cereal): Float {
-        return storage.getOrDefault(cereal,0f)
+        return storage.getOrDefault(cereal, 0f)
     }
 
     override fun getSpace(cereal: Cereal): Float {
-        return this.containerCapacity - storage.getOrDefault(cereal, 0f)
+        return containerCapacity - storage.getOrDefault(cereal, 0f)
     }
 
     override fun toString(): String {
-        return this.storage.map { "${it.key}: ${it.value}" }.joinToString("\n")
+        return storage.map { "${it.key}: ${it.value}" }.joinToString("\n")
     }
 
     private fun checkStorageCapacity(cereal: Cereal) {
-        if (!storage.contains(cereal)) return
-        check(storageCapacity >= (storage.size + 1) * containerCapacity) {
+        if (storage.contains(cereal)) return
+        require(storageCapacity >= (storage.size + 1) * containerCapacity) {
             "Недостаточно места в хранилище для нового контейнера"
         }
     }

@@ -70,6 +70,15 @@ class CerealStorageImplTest {
         }
     }
 
+    @Test
+    fun `should be thrown an exception when the storage is full of containers`() {
+        val storageTest = CerealStorageImpl(10f, 20f)
+        storageTest.addCereal(Cereal.RICE, 2f)
+        storageTest.addCereal(Cereal.BULGUR, 3f)
+        assertThrows(IllegalArgumentException::class.java) {
+            storageTest.addCereal(Cereal.MILLET, 5f)
+        }
+    }
 
     @Test
     fun `should return the amount of cereal received`() {
@@ -137,7 +146,7 @@ class CerealStorageImplTest {
     }
 
     @Test
-    fun `should return a string representation of the store`() {
+    fun `should return a string representation of the storage`() {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 2f)
         storageTest.addCereal(Cereal.BULGUR, 4.5f)

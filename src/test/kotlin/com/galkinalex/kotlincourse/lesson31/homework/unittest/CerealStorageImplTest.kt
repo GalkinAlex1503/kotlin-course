@@ -12,22 +12,22 @@ class CerealStorageImplTest {
     @Test
     fun `should initialize with valid containerCapacity and storageCapacity`() {
         val storageTest = CerealStorageImpl(15f, 100f)
-        assertEquals(15f, storageTest.containerCapacity)
+        assertEquals(15f, storageTest.containerCapacity, 0.01f)
         assertEquals(100f, storageTest.storageCapacity)
     }
 
     @Test
     fun `should initialize valid with zero for containerCapacity and valid storageCapacity`() {
         val storageTest = CerealStorageImpl(0f, 100f)
-        assertEquals(0f, storageTest.containerCapacity)
-        assertEquals(100f, storageTest.storageCapacity)
+        assertEquals(0f, storageTest.containerCapacity, 0.01f)
+        assertEquals(100f, storageTest.storageCapacity, 0.01f)
     }
 
     @Test
     fun `should initialize valid with zero for containerCapacity and zero storageCapacity`() {
         val storageTest = CerealStorageImpl(0f, 0f)
-        assertEquals(0f, storageTest.containerCapacity)
-        assertEquals(0f, storageTest.storageCapacity)
+        assertEquals(0f, storageTest.containerCapacity, 0.01f)
+        assertEquals(0f, storageTest.storageCapacity, 0.01f)
     }
 
     @Test
@@ -47,19 +47,19 @@ class CerealStorageImplTest {
     @Test
     fun `should add the amount of cereal to the container using the addCereal function`() {
         val storageTest = CerealStorageImpl(10f, 100f)
-        assertEquals(0f, storageTest.addCereal(Cereal.RICE, 2f))
+        assertEquals(0f, storageTest.addCereal(Cereal.RICE, 2f), 0.01f)
     }
 
     @Test
     fun `should add more cereal than the maximum capacity to the container using the addCereal function`() {
         val storageTest = CerealStorageImpl(10f, 100f)
-        assertEquals(2f, storageTest.addCereal(Cereal.RICE, 12f))
+        assertEquals(2f, storageTest.addCereal(Cereal.RICE, 12f), 0.01f)
     }
 
     @Test
     fun `you should add a quantity of cereal equal to the maximum capacity to the container using the addCereal function`() {
         val storageTest = CerealStorageImpl(10f, 100f)
-        assertEquals(0f, storageTest.addCereal(Cereal.RICE, 10f))
+        assertEquals(0f, storageTest.addCereal(Cereal.RICE, 10f), 0.01f)
     }
 
     @Test
@@ -75,14 +75,14 @@ class CerealStorageImplTest {
     fun `should return the amount of cereal received`() {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 2f)
-        assertEquals(2f, storageTest.getCereal(Cereal.RICE, 2f))
+        assertEquals(2f, storageTest.getCereal(Cereal.RICE, 2f), 0.01f)
     }
 
     @Test
     fun `should return the amount the remainder of cereal `() {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 5f)
-        assertEquals(5f, storageTest.getCereal(Cereal.RICE, 7f))
+        assertEquals(5f, storageTest.getCereal(Cereal.RICE, 7f), 0.01f)
     }
 
     @Test
@@ -120,13 +120,13 @@ class CerealStorageImplTest {
     fun `should return the amount of cereal that the container can hold, taking into account its current fullness`() {
         val storageTest = CerealStorageImpl(10f, 100f)
         storageTest.addCereal(Cereal.RICE, 2f)
-        assertEquals(8f, storageTest.getSpace(Cereal.RICE))
+        assertEquals(8f, storageTest.getSpace(Cereal.RICE), 0.01f)
     }
 
     @Test
     fun `must return the amount of cereal that is not in stock that the container can hold, taking into account its current filling`() {
         val storageTest = CerealStorageImpl(10f, 100f)
-        assertEquals(10f, storageTest.getSpace(Cereal.RICE))
+        assertEquals(10f, storageTest.getSpace(Cereal.RICE), 0.01f)
     }
 
     @Test

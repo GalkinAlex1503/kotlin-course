@@ -1,4 +1,4 @@
-//package org.example.org.example.lessons.lesson03.lesson
+package org.example.org.example.lessons.lesson03.lesson
 //
 ///*Переменные
 //Переменные в Kotlin - это основа для хранения данных. Kotlin предлагает несколько способов объявления переменных, каждый из которых имеет свои особенности и применения.

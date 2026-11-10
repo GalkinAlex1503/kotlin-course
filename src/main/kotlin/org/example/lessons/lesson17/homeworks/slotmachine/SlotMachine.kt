@@ -1,83 +1,74 @@
 package org.example.org.example.lessons.lesson17.homeworks.slotmachine
 
-abstract class BaseClass(
-    // объясни, почему это поле доступно в main() для чтения из класса ChildrenClass ----> через метод getAll
-    private val privateVal: String,
-    // объясни, почему это поле недоступно в main() , ----> идентификатор доступа - протект, поля доступно только внутри расширяемых классов и их методов
-    protected val protectedVal: String,
-    val publicVal: String
+class SlotMachine(
+    val color: String, // цвет
+    val IdModel: String, // модель
+    private var isOn: Boolean, // включен
+    private var isOsLoad: Boolean, // ОС загружена
+    private var gamesList: MutableList<String>, //список доступных игр
+    private var joystickAvailable: Boolean, // наличие джойстика
+    private var balance: Double, // баланс вырученных средств
+    private val holder: String, // владелец
+    val phoneSupport: String // телефон поддержки.
 ) {
-
-    var publicField = "измени меня из функции main() на Антонио Бандераса и проверь через функцию getAll()" +
-            "Доработай ChildrenClass таким образом, чтобы это получилось"
-        set(value) {
-            if (verifyPublicField(value)) {
-                field = value
-            }
-        }
-    protected var protectedField = "измени меня из функции main() через сеттер в наследнике"
-    private var privateField = "добавь сеттер чтобы изменить меня из main()"
-    fun setPrivateField(value: String) {
-        privateField = value
+    // включить
+    protected fun switchOn(): Boolean {
+        // do something important
+        this.isOn = true
+        return true
     }
 
-    fun getAll(): String {
-        return mapOf(
-            "privateVal" to privateVal,
-            "protectedVal" to protectedVal,
-            "publicVal" to publicVal,
-            "publicField" to publicField,
-            "protectedField" to protectedField,
-            "privateField" to privateField,
-        ).map { "${it.key}: ${it.value}" }
-            .joinToString("\n")
+    // выключить
+    protected fun switchOff(): Boolean {
+        // do something important
+        this.isOn = false
+        return true
     }
 
-    fun printText() {
-        privatePrint()
+    //    загрузить ОС
+    protected fun loadOs(): Boolean {
+        // do something important
+        this.isOsLoad = true
+        return true
     }
 
-    // объясни, почему эта функция не может быть публичной  --->  она возвращает класс который обявлен внутри текущего класса как протектед, и не может быть возвращен мне этого класса публичной функцией
-    protected open fun getProtectedClass() = ProtectedClass()
+    //    завершить работу ОС
 
-    protected open fun verifyPublicField(value: String): Boolean {
-        return value.length < 3
+    protected fun shutDownOS(): Boolean {
+        // do something important
+        this.isOsLoad = false
+        return true
     }
 
-    private fun privatePrint() {
-        println("Печать из класса BaseClass")
+    //    показать список игр
+    fun getGamesList(): List<String> {
+        return this.gamesList
     }
 
-    // объясни, почему эта функция не может быть публичной или protected  --->   функция возвращает класс который является приватным относительно этого класса
-    private fun getPrivateClass() = PrivateClass()
-
-    protected class ProtectedClass
-
-    private class PrivateClass
-}
-
-class ChildrenClass(
-    val privateVal: String,
-    protectedVal: String,
-    // объясни, почему этот аргумент доступен в main() несмотря на то, что это не поле
-    publicVal: String
-) : BaseClass(privateVal, protectedVal, publicVal) {
-
-    // объясни, почему в main() доступна функция getAll() хотя её здесь нет   --->   функция наследована от родительского класса
-
-    // проверь, что выводится на печать при вызове функции printText()  --->  Печать из класса BaseClass
-    // и объясни, почему не происходит переопределение метода privatePrint()   --->  метод приватный для родительского класса
-    private fun privatePrint() {
-        println("Печать из класса ChildrenClass")
+    //    включить игру
+    protected fun startGame(game: String): Boolean {
+        // do something important
+        return true
     }
 
-    // ---> изменение проверки длины чтобы работал сеттер
-    override fun verifyPublicField(value: String): Boolean {
-        return value.length > 3
+    //    оплатить игровой сеанс
+    fun payGame(game: String): Boolean {
+        // do something important
+        return true
     }
 
-    fun setProtField(value: String) {
-        protectedField = value
+    //    открыть сейф и выдать наличные
+    protected fun collectionCash(): Boolean {
+        // do something important
+        this.balance = 0.0
+        return true
+    }
+
+    //    выплатить выигрыш
+    protected fun payOutWin(sumWin: Double): Boolean {
+        // do something important
+        this.balance -= sumWin
+        return true
     }
 
 }

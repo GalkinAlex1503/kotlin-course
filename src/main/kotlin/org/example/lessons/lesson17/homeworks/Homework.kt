@@ -1,6 +1,6 @@
 package org.example.org.example.lessons.lesson17.homeworks
 
-import org.example.org.example.lessons.lesson17.homeworks.slotmachine.ChildrenClass
+import org.example.org.example.lessons.lesson17.homeworks.qa.ChildrenClass
 
 
 fun main() {
